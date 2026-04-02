@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HCD</title>
 </head>
 <body>
+    <header>
+        <h1>Dit is een (hopelijk) screenreader-vriendlijk spelletje</h1>
+        <p>Hopelijk zit heel veel sfeer in dit spelletje. Daarvoor mag je de muziek en de geluidseffecten hieronder aanzetten. Maar niks hoeft.</p>
+
+        <label for="muziek" >Muziek aanzetten</label>
+        <input type="checkbox" aria-describedby="muziekstatus" id="muziek">
+        <p id="muziekstatus" aria-live="polite">De muziek staat nu uit</p>
+
+        <label for="geluid" >Geluid aanzetten</label>
+        <input type="checkbox" aria-describedby="geluidstatus" id="geluid">
+        <p id="geluidstatus" aria-live="polite">De geluidseffecten staan nu uit</p>
+
+    </header>
+
+    <main>
+        <header>
+            <p>Hieronder begint het spelletje. Het doel van het spelletje is om bloemen te planten.</p> 
+            <p>Je hebt een aantal zaadjes en een bloempot. Selecteer het zaadje en klikt op de bloemenpot om het zaadje te planten.</p>
+        </header>
+
+        <section>
+            <label for="bloemzaadjes">Kies een bloemenzaadje</label>
+            <select name="bloemzaadjes" id="bloemzaadjes">
+                <option value="tulp">Tulpen zaad</option>
+                <option value="klaproos">Klaprozen zaad</option>
+                <option value="cosmea">Cosmea zaad</option>
+            </select>
+
+            <label for="bloempot" >Bloempot</label>
+            <input type="checkbox" aria-describedby="bloemstatus" id="bloempot">
+            <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+
+
+
+            
+
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
     
 </body>
 </html>

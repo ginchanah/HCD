@@ -144,3 +144,12 @@ Maar omdat hij dus eigenlijk geen behoefte heeft aan praktische dingen en alleen
 ## Feedback Week 1
 Misschien kan ik werken met pitch en snelheid aanpassen. Knoppen kunnen al veel beter zijn als ze goed worden omschreven zoals hier https://www.ohra.nl/.
 Ga iets kleins maken en dat heel goed uitwerken in plaats van iets groots wat niet goed werkt. Ga voor nu één functionaliteit uitwerken die je goed kunt testen. En ga niet te veel nadenken over wat hij wil want mensen weten vaak niet wat ze willen.
+
+
+## Dag 3 
+Ik had onderzoek gedaan naar screenreader-vriendelijke spelletjes en ik zag dat je stardew valley kon spelen met een screenreader door een mod toe te voegen. Dat heb ik gedaan en gekeken naar hoe ik met de screenreader kan omgaan om 
+
+Vragen:
+- Is het juist fijn om selects en inputs te gebruiken of moet ik beter met divs gaan werken die alleen tekst-gebaseerde informatie weergeven?
+- Is het duidelijk dat het een spelletje is?
+- Je kunt een heele tuin maken en verschillende bloemen planten die dan verschillende staten hebben, en ze groeien als je ze water geeft
