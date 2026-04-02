@@ -139,4 +139,8 @@ Nee
 Eigenlijk zijn de meeste van de opdrachten die Berend heeft bedacht niet echt van toepassing voor Ihab. Ihab zei bij heel veel opdrachten, zoals een library van sneltoetsen maken, dat dat niet echt nodig was omdat je het ook gewoon kunt googelen. Verder zei hij dat hij niet echt met extensies werkt omdat hij goed genoeg kan omgaan met zijn screenreader en dat hij ook niet echt behoefte heeft aan extra functionaliteiten omdat alles wat al bestaat al goed genoeg is. 
 Hij zei dat de screennreader wel heel eentonig is en de sfeer van een website niet goed weergegeven kan worden. Maar hij zei ook dat hij dat niet vaak mist, behalve op social media waar het om persoonlijke verhalen gaat. Maar ook personlijke websites en producten die je wilt kopen zouden fijner zijn als ze wat meer sfeervol omschreven worden.
 
-Daarom wil ik nu proberen om een soort blog te maken met persoonlijke verhalen en die zo sfeervol mogelijk overbrengen.
+Maar omdat hij dus eigenlijk geen behoefte heeft aan praktische dingen en alleen sfeer wil voor dingen die niet belangrijk zijn om te bedienen, wil ik iets onbelangrijks en onpraktischs maken: een spel! Maar dan screenreader-friendly
+
+## Feedback Week 1
+Misschien kan ik werken met pitch en snelheid aanpassen. Knoppen kunnen al veel beter zijn als ze goed worden omschreven zoals hier https://www.ohra.nl/.
+Ga iets kleins maken en dat heel goed uitwerken in plaats van iets groots wat niet goed werkt. Ga voor nu één functionaliteit uitwerken die je goed kunt testen. En ga niet te veel nadenken over wat hij wil want mensen weten vaak niet wat ze willen.
