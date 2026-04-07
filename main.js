@@ -51,18 +51,26 @@ selectBloemzaad.addEventListener("change", (event) => {
     selectedBloemTextContent = event.target.options[event.target.selectedIndex].text;
 });
 
-bloempotCheckbox.addEventListener("change", () => {
-    if (bloempotCheckbox.checked) {
-        bloemStatus.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
-        console.log(bloemStatus.textContent)
-        if (geluidCheckbox.checked) {
-            bloemGeplantAudio.play();
+
+
+const bloempotCheckboxes = document.querySelectorAll(".bloempot")
+
+bloempotCheckboxes.forEach((bloempot) => {
+    bloempot.addEventListener("change", (event) => {
+        let description = bloempot.nextElementSibling
+        if (bloempot.checked) {
+            description.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
+            console.log(description.textContent)
+            if (geluidCheckbox.checked) {
+                bloemGeplantAudio.play();
+            }
+            
+        } else {
+            description.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
+            if (geluidCheckbox.checked) {
+                shovelGeluid.play();
+            }
         }
-        
-    } else {
-        bloemStatus.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
-        if (geluidCheckbox.checked) {
-            shovelGeluid.play();
-        }
-    }
-});
+    })
+
+})

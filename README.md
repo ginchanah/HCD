@@ -153,3 +153,48 @@ Vragen:
 - Is het juist fijn om selects en inputs te gebruiken of moet ik beter met divs gaan werken die alleen tekst-gebaseerde informatie weergeven?
 - Is het duidelijk dat het een spelletje is?
 - Je kunt een heele tuin maken en verschillende bloemen planten die dan verschillende staten hebben, en ze groeien als je ze water geeft
+
+
+
+
+## Dag 4
+Wat heb ik vandaag gedaan?
+- Testen met Ihab
+- Prototype verder uitwerken zodat er meer bloempotten zijn waarin je verschillende bloemen kunt planten
+![meerdere plant](assets/readme-images/planten.png)
+
+### Testen Prototype
+
+Ik had dus een prototype gemaakt waarbij je uit drie zaden kunt kiezen en deze vervolgens planten in een bloempot. Daarnaast heb ik een knop toegevoegd voor muziek en geluidseffecten.
+![Prototype 1](assets/readme-images/prototype1.png)
+
+Ihab teste de website. Daarbij viel mij op dat hem niet gelijk duidelijk was wat de geluidseffecten zijn dus dat zal ik aanpassen en duidelijker maken.
+
+Ik vroeg verder vooral of het een fijne ervaring voor hem was om met de selectie dropdown en de checkboxes te werken voor de zaden en de bloempot. Hij zei dat dat duidelijk was.
+
+Hij zei dat het concept leuk was maar dat ik het nu nog leuker en echt interactief moet maken.
+
+Hij stelde zelf een aantal dingen voor die ik ook al wilde doen:
+
+- een hele tuin kunnen maken
+- tonen wanneer planten water nodig hebben
+- beschrijving van de bloemen in de verschillende staten
+
+Verder stelde hij voor om:
+
+- een overzicht van alle geplante bloemen te maken
+- tonen hoe lang bloemen al geplant zijn
+- een mogelijkheid te hebben om nieuwe bloemen te maken
+
+Hij zei dat het hem niet perse nodig leek om rond te kunnen lopen.
+
+
+### Milas test
+
+Wat is sfeer:
+- Achtergrond
+- Kleur van tekst
+- Vrolijk vs niet vrolijk
+- Toonhoogte en ritme screenreader
+- Xander voor Nederlands, Alison voor Engels
+
