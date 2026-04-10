@@ -141,7 +141,7 @@ Hij zei dat de screennreader wel heel eentonig is en de sfeer van een website ni
 
 Maar omdat hij dus eigenlijk geen behoefte heeft aan praktische dingen en alleen sfeer wil voor dingen die niet belangrijk zijn om te bedienen, wil ik iets onbelangrijks en onpraktischs maken: een spel! Maar dan screenreader-friendly
 
-## Feedback Week 1
+## Voorgang Week 1
 Misschien kan ik werken met pitch en snelheid aanpassen. Knoppen kunnen al veel beter zijn als ze goed worden omschreven zoals hier https://www.ohra.nl/.
 Ga iets kleins maken en dat heel goed uitwerken in plaats van iets groots wat niet goed werkt. Ga voor nu één functionaliteit uitwerken die je goed kunt testen. En ga niet te veel nadenken over wat hij wil want mensen weten vaak niet wat ze willen.
 
@@ -158,11 +158,6 @@ Vragen:
 
 
 ## Dag 4
-Wat heb ik vandaag gedaan?
-- Testen met Ihab
-- Prototype verder uitwerken zodat er meer bloempotten zijn waarin je verschillende bloemen kunt planten
-![meerdere plant](assets/readme-images/planten.png)
-
 ### Testen Prototype
 
 Ik had dus een prototype gemaakt waarbij je uit drie zaden kunt kiezen en deze vervolgens planten in een bloempot. Daarnaast heb ik een knop toegevoegd voor muziek en geluidseffecten.
@@ -198,3 +193,24 @@ Wat is sfeer:
 - Toonhoogte en ritme screenreader
 - Xander voor Nederlands, Alison voor Engels
 
+### Wat heb ik vandaag gedaan?
+- Testen met Ihab
+- Prototype verder uitwerken zodat er meer bloempotten zijn waarin je verschillende bloemen kunt planten
+![meerdere plant](assets/readme-images/planten.png)
+
+
+## Voortgang Week 2
+- Scherm kan ik ook zwart maken want het is toch voor Ihab
+- Werken met aria labels en aria roles
+- Veel overzicht toevoegen want hij ziet natuurlijk niks
+- Spelen met HTML elementen want hij is er heel goed in
+- Echt door de tuin lijden, zoiets van "Welkom, je staat nu bij de deur. Je loopt nu langs het pad. Je kijkt naar al je bloemen. OVERZICHT deze bloemen heb jij allemaal. Oh nee deze bloem heeft water nodig. Je moet de gieter pakken."
+- met aria live polite een bij laten verschijnen? of vlinders?
+- Zaden zitten in je tuinhuisje die moet je vanuit daar pakken ofzo
+
+
+
+
+## Vragen voor Ihab
+- wil je een aparte select voor elke bloem of juist eentje waar al je bloemzaden zitten?
+-
