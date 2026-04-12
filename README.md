@@ -213,4 +213,4 @@ Wat is sfeer:
 
 ## Vragen voor Ihab
 - wil je een aparte select voor elke bloem of juist eentje waar al je bloemzaden zitten?
--
+- vind je het fijn als de focus redirect wordt?

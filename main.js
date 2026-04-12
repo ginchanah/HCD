@@ -42,8 +42,13 @@ geluidCheckbox.addEventListener("change", () => {
 
 
 // geselecteerde value en text
-let selectedBloemValue = selectBloemzaad.value;       
-let selectedBloemTextContent  = selectBloemzaad.options[selectBloemzaad.selectedIndex].text; 
+let selectedBloemValue = selectBloemzaad.value;  
+let selectedOption = selectBloemzaad.options[selectBloemzaad.selectedIndex];
+
+let selectedBloemTextContent  = selectedOption.text; 
+
+
+const selectedBloemNaam = selectedOption.dataset.bloem;
 
 // als je een nieuwe optie selecterd dan verander de value 
 selectBloemzaad.addEventListener("change", (event) => {
@@ -53,17 +58,35 @@ selectBloemzaad.addEventListener("change", (event) => {
 
 
 
-const bloempotCheckboxes = document.querySelectorAll(".bloempot")
+
+
+const bloempotCheckboxes = document.querySelectorAll(".bloembed")
 
 bloempotCheckboxes.forEach((bloempot) => {
     bloempot.addEventListener("change", (event) => {
         let description = bloempot.nextElementSibling
+
+
         if (bloempot.checked) {
             description.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
             console.log(description.textContent)
             if (geluidCheckbox.checked) {
                 bloemGeplantAudio.play();
             }
+
+
+            // lijst zichtbaar maken voor screenreaders
+            tuinOverzicht.setAttribute('aria-hidden', 'false');
+
+            // li per bloempot; reuse als hij al bestaat
+            let li = tuinOverzicht.querySelector(`li[data-pot-id="${bloempot.id}"]`);
+            if (!li) {
+                li = document.createElement('li');
+                li.dataset.potId = bloempot.id;
+                tuinOverzicht.appendChild(li);
+            }
+
+            li.textContent = `${selectedBloemTextContent}`
             
         } else {
             description.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
@@ -74,3 +97,117 @@ bloempotCheckboxes.forEach((bloempot) => {
     })
 
 })
+
+const checkbox = document.getElementById('premiumbloembed');
+const statusMessage = document.getElementById('status');
+const button = document.getElementById('verwijderOnkruid');
+const help = document.getElementById('bloembedhelp')
+const onkruidSpan = document.querySelector('#label span')
+
+
+button.addEventListener('click', () => {
+
+    checkbox.disabled = false;
+
+    statusMessage.textContent = 'De brandnetel is verwijdert. Je vingers doen nu wel een beetje pijn.';
+    help.textContent = 'Je kunt nu bloemen planten in dit bloembed.'
+    onkruidSpan.textContent = ''
+
+    checkbox.focus();
+
+    button.classList.add("hidden")
+});
+
+checkbox.addEventListener('click', () => {
+    if (checkbox.checked) {
+            statusMessage.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
+            help.textContent = ''
+            onkruidSpan.textContent = `met ${selectedBloemNaam}`
+            waterButton.classList.remove("hidden")
+
+            if (geluidCheckbox.checked) {
+                bloemGeplantAudio.play();
+            }
+            
+        } else {
+            statusMessage.textContent = 'Je hebt de bloemen verwijdert... je voelt je een beetje verdrietig.';
+
+            if (geluidCheckbox.checked) {
+                shovelGeluid.play();
+            }
+        }
+})
+
+const waterButton = document.getElementById('water')
+const verwijderBloemenButton = document.getElementById('verwijderBloemen')
+let waterInstance = 0
+
+waterButton.addEventListener('click', () => {
+    waterInstance++
+
+    let geplanteBloem = onkruidSpan.textContent
+    
+    if (waterInstance === 1) {
+        statusMessage.textContent = 'Er begint een klein beetje groen door de grond te komen!'
+        checkbox.focus();
+    } 
+    if (waterInstance === 2) {
+        statusMessage.textContent = 'Er begint een knosp te vormen!'
+        checkbox.focus();
+    } 
+    if (waterInstance === 3) {
+        statusMessage.textContent = `Je ${geplanteBloem} is helemaal in bloem! Het ruikt heerlijk.`
+        checkbox.focus();
+    } 
+    if (waterInstance >= 4) {
+        statusMessage.textContent = `Je ${geplanteBloem} heeft te veel water gekregen en is kapot gegaan.. je bent verdrietig`
+        checkbox.focus();
+        waterButton.classList.add('hidden')
+        verwijderBloemenButton.classList.remove('hidden')
+    }
+    
+    
+})
+
+verwijderBloemenButton.addEventListener('click', () => {
+    statusMessage.textContent = 'Je kunt nu bloemen planten in dit bloembed.'
+    onkruidSpan.textContent = ''
+    checkbox.checked = false;
+    checkbox.focus();
+})
+
+
+// overzicht
+
+const tuinDescription = document.getElementById("tuinDescription");
+const tuinDescription2 = document.getElementById("tuinDescription2");
+const bloembedCheckboxes = document.querySelectorAll(".bloembed");
+
+// functie die je tuin-tekst bijwerkt
+function updateTuinBeschrijving() {
+    const isIetsGeplant = Array.from(bloembedCheckboxes).some(cb => cb.checked);
+
+    if (isIetsGeplant) {
+        // tekst aanpassen
+        tuinDescription.textContent =
+            "Je staat in je tuin en het ruikt heerlijk. Je herkent de volgende bloemengeuren:";
+
+        // tweede tekst verbergen
+        tuinDescription2.classList.add("hidden");
+    } else {
+        // terug naar “lege tuin” tekst (pas aan aan jouw originele tekst)
+        tuinDescription.textContent =
+            "Je staat voor je tuin en ruikt nu al alle lekkere bloemen die je van plan bent om te planten.";
+        tuinDescription2.classList.remove("hidden");
+    }
+}
+
+// alle bloembed-checkboxen dezelfde listener geven
+bloembedCheckboxes.forEach((bloembed) => {
+    bloembed.addEventListener("change", updateTuinBeschrijving);
+});
+
+// optioneel: bij eerste load ook meteen goede toestand zetten
+updateTuinBeschrijving();
+
+

@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCD</title>
+    <title>Spelletje voor Ihab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Dit is een (hopelijk) screenreader-vriendlijk spelletje</h1>
+        <h1>Spelletje voor Ihab</h1>
         <p>Hopelijk zit heel veel sfeer in dit spelletje. Daarvoor mag je de muziek en de geluidseffecten hieronder aanzetten. Maar niks hoeft.</p>
+        <p>Het doel van het spel is om bloemen in je tuin te planten en te laten groeien door ze water te geven. Zo kun je je eigen gewelige kleine tuin vormgeven.</p> 
+        <p>Je hebt een aantal zaaden en een tuin met bloembedden. Selecteer een zaad en klikt op een van de bloembedden om de zaad te planten.</p>
 
         <label for="muziek" >Muziek aanzetten</label>
         <input type="checkbox" aria-describedby="muziekstatus" id="muziek">
         <p id="muziekstatus" aria-live="polite">De muziek staat nu uit</p>
 
-        <label for="geluid" >Geluid aanzetten</label>
+        <label for="geluid" >Geluidseffecten aanzetten</label>
         <input type="checkbox" aria-describedby="geluidstatus" id="geluid">
         <p id="geluidstatus" aria-live="polite">De geluidseffecten staan nu uit</p>
 
@@ -23,53 +25,91 @@
 
     <main>
         <header>
-            <p>Hieronder begint het spelletje. Het doel van het spelletje is om bloemen te planten en te laten groeien door ze water te geven.</p> 
-            <p>Je hebt een aantal zaadjes en een tuin met bloempotten. Selecteer een zaadje en klikt op een van de bloempotten om het zaadje te planten.</p>
+            <h2>Introductie</h2>
+            <p>Na een lange dag op werk loop je eindelijk naar je tuin.</p>
+            <p>De tuin die nu voor je ligt heb je een tijdje geleden van een buurvrouw overgenomen die niet meer voor hem kan zorgen.</p>
+            <p>Je hebt haar belooft om de tuin op te knappen, maar tot nu toe heb je nog heel veel lege bloembedden en onkruid.</p>
+            <p>Dus het is hoogste tijd om aan de slag te gaan!</p>
+            <p>Je komt aan bij de poort van je tuin en je kijkt, wat er vandaag allemaal te toen is.</p>
         </header>
 
         <section>
+            <h2>Overzicht van je tuin</h2>
+            <p id="tuinDescription">Je staat voor je tuin en ruikt <span>nu al</span> alle lekkere bloemen die je <span>van plan bent om te planten.</span></p>
+            <p id="tuinDescription2">Tot nu toe is je tuin wel nog leeg <span>en je ruikt vooral onkruid.</span></p>
+
+            <ul id="tuinOverzicht" aria-hidden="true">
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bloemzaad</h2>
             <label for="bloemzaadjes">Kies een bloemenzaadje</label>
             <!-- deze ook al uitleggen? -->
             <select name="bloemzaadjes" id="bloemzaadjes">
-                <option value="tulp">Tulpen zaad</option>
-                <option value="klaproos">Klaprozen zaad</option>
-                <option value="cosmea">Cosmea zaad</option>
-                <option value="korenbloem">Korenbloem zaad</option>
-                <option value="lavendel">Lavendel zaad</option>
-                <option value="goudsbloem">Goudsbloem zaad</option>
+                <option value="tulp" data-bloem="Tulpen">Tulpen zaad</option>
+                <option value="klaproos" data-bloem="Klaprozen">Klaprozen zaad</option>
+                <option value="cosmea" data-bloem="Cosmea">Cosmea zaad</option>
+                <option value="korenbloem" data-bloem="Korenbloem">Korenbloem zaad</option>
+                <option value="lavendel" data-bloem="Lavendel">Lavendel zaad</option>
+                <option value="goudsbloem" data-bloem="Goudsbloem">Goudsbloem zaad</option>
             </select>
 
             
         </section>
         
         <section id="tuin">
-            <label for="bloempot" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus" id="bloempot" class="bloempot">
-            <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <h2>Tuin</h2>
+            <label id="label" for="premiumbloembed">Bloembed <span>met brandnetel</span></label>
+            <input type="checkbox" id="premiumbloembed" disabled aria-describedby="bloembedhelp status"/>
 
-            <label for="bloempot2" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus2" id="bloempot2" class="bloempot">
-            <p id="bloemstatus2" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <p id="bloembedhelp" aria-live="polite">Je kunt nog geen bloemen planten omdat er unkruid in dit bloembed zit.</p>
 
-            <label for="bloempot3" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus3" id="bloempot3" class="bloempot">
-            <p id="bloemstatus3" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <p id="status" aria-live="polite" role="status"></p>
 
-            <label for="bloempot4" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus4" id="bloempot4" class="bloempot">
-            <p id="bloemstatus4" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <button type="button" id="verwijderOnkruid" aria-controls="premiumbloembed status">
+                Verwijder onkruid
+            </button>
 
-            <label for="bloempot5" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus5" id="bloempot5" class="bloempot">
-            <p id="bloemstatus5" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <button type="button" id="water" aria-controls="premiumbloembed status" class="hidden">
+                Geef water aan je bloemen
+            </button>
 
-            <label for="bloempot6" >Bloempot</label>
-            <input type="checkbox" aria-describedby="bloemstatus6" id="bloempot6" class="bloempot">
-            <p id="bloemstatus6" aria-live="polite">Je hebt nog geen bloem geplant in deze bloempot</p>
+            <button type="button" id="verwijderBloemen" aria-controls="premiumbloembed status" class="hidden">
+                Verwijder bloemen
+            </button>
+            
+
+
+            <label for="bloembed" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus" id="bloembed" class="bloembed">
+            <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+
+            <label for="bloembed2" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus2" id="bloembed2" class="bloembed">
+            <p id="bloemstatus2" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+
+            <label for="bloembed3" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus3" id="bloembed3" class="bloembed">
+            <p id="bloemstatus3" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+
+            <label for="bloembed4" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus4" id="bloembed4" class="bloembed">
+            <p id="bloemstatus4" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+
+            <label for="bloembed5" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus5" id="bloembed5" class="bloembed">
+            <p id="bloemstatus5" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+
+            <label for="bloembed6" >Bloembed <span></span></label>
+            <input type="checkbox" aria-describedby="bloemstatus6" id="bloembed6" class="bloembed">
+            <p id="bloemstatus6" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
 
         </section>
 
     </main>
+
 
     <script src="main.js"></script>
     
