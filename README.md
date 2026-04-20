@@ -209,8 +209,28 @@ Wat is sfeer:
 - Zaden zitten in je tuinhuisje die moet je vanuit daar pakken ofzo
 
 
+## Smashing Conferentie
+### Test met Jules Ernst
 
+Ik heb op de Smashing Conference met Jules Ernst gesproken, een toegankelijkheids-expert die al meer dan 20 jaar bezig is met digitale toegankelijkheid. Ik heb mijn website aan hem laten zien. 
+
+- Aria-labelledby section overbodig
+- Aria-polite is prima voor de meeste dingen, maar voor verandering in het bloembed kun je ook 
+- Ik moet nadenken over hoe een screenreader gebruiker eerst door de hele website heengaat en daarna weer boven begint.
+- Misschien is het handig om een melding te maken die alles aangeeft in plaats van een aparte melding voor elk bloembed, en die melding moet dan assertive. Deze melding moet op een lager niveau dan de tuin
+- Bloemzaad als kopniveau in de tuin en niet daarbuiten
+- Overzicht pas aan het einde, maar ook; hoe weet de gebruiker dat het overzicht veranderd
+- In het overzicht weer linkjes naar boven naar de zaadjes
+
+En: misschien is het handig om het tuinieren en de tuin apart te hebben!
+
+
+## Dag 5
+Wat heb ik vandaag gedaan?
+- Ik heb de feedback van Jules verwerkt een een aparte tuin en tuinier sectie gemaakt. Maar ik heb wel ook mijn oude design erin gelaten om aan Ihab te vragen welke hij fijner vindt. 
 
 ## Vragen voor Ihab
 - wil je een aparte select voor elke bloem of juist eentje waar al je bloemzaden zitten?
 - vind je het fijn als de focus redirect wordt?
+
+- fijner om overzicht bij bloempot zelf te hebben en bij de bloempot zelf te tuinieren OF wil je juist tuinieren en bloempot apart

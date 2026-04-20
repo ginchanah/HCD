@@ -8,18 +8,22 @@
 </head>
 <body>
     <header>
+        <div id="blind-mode-group" aria-hidden="true">
+            <label for="blind-mode">Als je niet Ihab bent, klik hier -></label>
+            <input id="blind-mode" type="checkbox">
+        </div>
         <h1>Spelletje voor Ihab</h1>
         <p>Hopelijk zit heel veel sfeer in dit spelletje. Daarvoor mag je de muziek en de geluidseffecten hieronder aanzetten. Maar niks hoeft.</p>
         <p>Het doel van het spel is om bloemen in je tuin te planten en te laten groeien door ze water te geven. Zo kun je je eigen gewelige kleine tuin vormgeven.</p> 
-        <p>Je hebt een aantal zaaden en een tuin met bloembedden. Selecteer een zaad en klikt op een van de bloembedden om de zaad te planten.</p>
+        <p>Je hebt zowel een bloempot als ook een aantal bloembedden. In je bloempot plant je bloemen op een andere manier dan in je bloembedden. Laat vooral weten of dat duidelijk is en welke manier fijner is!</p>
 
         <label for="muziek" >Muziek aanzetten</label>
         <input type="checkbox" aria-describedby="muziekstatus" id="muziek">
-        <p id="muziekstatus" aria-live="polite">De muziek staat nu uit</p>
+        <p id="muziekstatus" aria-live="polite" aria-atomic="true">De muziek staat nu uit</p>
 
         <label for="geluid" >Geluidseffecten aanzetten</label>
         <input type="checkbox" aria-describedby="geluidstatus" id="geluid">
-        <p id="geluidstatus" aria-live="polite">De geluidseffecten staan nu uit</p>
+        <p id="geluidstatus" aria-live="polite" aria-atomic="true">De geluidseffecten staan nu uit</p>
 
     </header>
 
@@ -33,78 +37,162 @@
             <p>Je komt aan bij de poort van je tuin en je kijkt, wat er vandaag allemaal te toen is.</p>
         </header>
 
-        <section>
-            <h2>Overzicht van je tuin</h2>
-            <p id="tuinDescription">Je staat voor je tuin en ruikt <span>nu al</span> alle lekkere bloemen die je <span>van plan bent om te planten.</span></p>
-            <p id="tuinDescription2">Tot nu toe is je tuin wel nog leeg <span>en je ruikt vooral onkruid.</span></p>
+        
 
-            <ul id="tuinOverzicht" aria-hidden="true">
-                
-            </ul>
-        </section>
-
-        <section>
-            <h2>Bloemzaad</h2>
-            <label for="bloemzaadjes">Kies een bloemenzaadje</label>
-            <!-- deze ook al uitleggen? -->
-            <select name="bloemzaadjes" id="bloemzaadjes">
-                <option value="tulp" data-bloem="Tulpen">Tulpen zaad</option>
-                <option value="klaproos" data-bloem="Klaprozen">Klaprozen zaad</option>
-                <option value="cosmea" data-bloem="Cosmea">Cosmea zaad</option>
-                <option value="korenbloem" data-bloem="Korenbloem">Korenbloem zaad</option>
-                <option value="lavendel" data-bloem="Lavendel">Lavendel zaad</option>
-                <option value="goudsbloem" data-bloem="Goudsbloem">Goudsbloem zaad</option>
-            </select>
-
-            
-        </section>
         
         <section id="tuin">
             <h2>Tuin</h2>
-            <label id="label" for="premiumbloembed">Bloembed <span>met brandnetel</span></label>
-            <input type="checkbox" id="premiumbloembed" disabled aria-describedby="bloembedhelp status"/>
 
-            <p id="bloembedhelp" aria-live="polite">Je kunt nog geen bloemen planten omdat er unkruid in dit bloembed zit.</p>
+            <section>
+                <p>Je loopt je tuin binnen en voor de ingang staat een eenzame bloempot.</p>
+                <p>Je weet niet waar deze bloempot vandaan komt. Maar je wilt er graag bloemen in planten.</p>
+                <p>Voordat je begint aan het tuinieren in de rest van je tuin besteed je even wat aandacht aan deze bloempot.</p>
 
-            <p id="status" aria-live="polite" role="status"></p>
-
-            <button type="button" id="verwijderOnkruid" aria-controls="premiumbloembed status">
-                Verwijder onkruid
-            </button>
-
-            <button type="button" id="water" aria-controls="premiumbloembed status" class="hidden">
-                Geef water aan je bloemen
-            </button>
-
-            <button type="button" id="verwijderBloemen" aria-controls="premiumbloembed status" class="hidden">
-                Verwijder bloemen
-            </button>
-            
+                <h4 id="bloempot-h4">Kies een bloemenzaadje voor je bloempot</h4>
+                <label for="bloemzaadjes">Kies een bloemenzaadje</label>
+                <!-- deze ook al uitleggen? -->
+                <select name="bloemzaadjes" id="bloemzaadjes">
+                    <option value="tulp" data-bloem="Tulpen">Tulpen zaad</option>
+                    <option value="klaproos" data-bloem="Klaprozen">Klaprozen zaad</option>
+                    <option value="cosmea" data-bloem="Cosmea">Cosmea zaad</option>
+                    <option value="korenbloem" data-bloem="Korenbloem">Korenbloem zaad</option>
+                    <option value="lavendel" data-bloem="Lavendel">Lavendel zaad</option>
+                    <option value="goudsbloem" data-bloem="Goudsbloem">Goudsbloem zaad</option>
+                </select>
 
 
-            <label for="bloembed" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus" id="bloembed" class="bloembed">
-            <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+                <h4>De eenzame Bloempot</h4>
+                <label id="label" for="premiumbloembed">Bloempot <span>met brandnetel</span></label>
+                <input type="checkbox" id="premiumbloembed" disabled aria-disabled="true" aria-describedby="bloembedhelp status"/>
+    
+                <p id="bloembedhelp" aria-live="polite" aria-atomic="true">Je kunt nog geen bloemen planten omdat er onkruid in deze bloempot zit.</p>
+    
+                <p id="status" aria-live="assertive" role="status" aria-atomic="true"></p>
+    
+                <button type="button" id="verwijderOnkruid" aria-controls="premiumbloembed status">
+                    Verwijder onkruid
+                </button>
+    
+                <button type="button" id="water" aria-controls="premiumbloembed status" class="hidden">
+                    Geef water aan je bloemen
+                </button>
+    
+                <button type="button" id="verwijderBloemen" aria-controls="premiumbloembed status" class="hidden">
+                    Verwijder bloemen
+                </button>
+            </section>
 
-            <label for="bloembed2" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus2" id="bloembed2" class="bloembed">
-            <p id="bloemstatus2" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+            <section>
+                <h3 id="tuinieren-h3">Tuinieren</h3>
 
-            <label for="bloembed3" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus3" id="bloembed3" class="bloembed">
-            <p id="bloemstatus3" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+                <label for="bloembed-select">Kies een bloembed om in te werken</label>
 
-            <label for="bloembed4" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus4" id="bloembed4" class="bloembed">
-            <p id="bloemstatus4" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+                <select name="bloembedden" id="bloembed-select">
+                    <option value="links-boven">Links Boven</option>
+                    <option value="rechts-boven">Rechts Boven</option>
+                    <option value="links-onder">Links Onder</option>
+                    <option value="rechts-onder">Rechts Onder</option>
+                </select>
 
-            <label for="bloembed5" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus5" id="bloembed5" class="bloembed">
-            <p id="bloemstatus5" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+                <p class="uitleg">In dit bloembed zit tuinkers of whatever. Dit is een onkruid. Maar je kunt het eten en het is lekker.</p>
 
-            <label for="bloembed6" >Bloembed <span></span></label>
-            <input type="checkbox" aria-describedby="bloemstatus6" id="bloembed6" class="bloembed">
-            <p id="bloemstatus6" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+                <label for="tuinier-acties">Kies een actie om uit te voeren in je bloembed</label>
+
+                <select name="tuinier-acties" id="tuinier-acties">
+                    <option value="onkruid-wieden">Onkruid wieden</option>
+                    <option value="bloemen-planten">Bloemen planten</option>
+                    <option value="water-geven">Water geven</option>
+                    <option value="bloemen-verwijderen">Bloemen verwijderen</option>
+                </select>
+
+                <section>
+                    <h4>Onkruid wieden</h4>
+                </section>
+
+                <section>
+                    <h4>Bloemen Planten</h4>
+                    <!-- <label for="bloemzaadjes">Kies een bloemenzaadje</label>
+                
+                    <select name="bloemzaadjes" id="bloemzaadjes">
+                        <option value="tulp" data-bloem="Tulpen">Tulpen zaad</option>
+                        <option value="klaproos" data-bloem="Klaprozen">Klaprozen zaad</option>
+                        <option value="cosmea" data-bloem="Cosmea">Cosmea zaad</option>
+                        <option value="korenbloem" data-bloem="Korenbloem">Korenbloem zaad</option>
+                        <option value="lavendel" data-bloem="Lavendel">Lavendel zaad</option>
+                        <option value="goudsbloem" data-bloem="Goudsbloem">Goudsbloem zaad</option>
+                    </select> -->
+                </section>
+
+                <section>
+                    <h4>Water geven</h4>
+
+                </section>
+                
+                <section>
+                    <h4>Bloemen verwijderen</h4>
+
+                </section>
+
+            </section>
+
+            <section>
+                <h3 id="overzichth2">Overzicht van je tuin</h3>
+                <p id="tuinDescription">Je staat voor je tuin en ruikt <span>nu al</span> alle lekkere bloemen die je <span>van plan bent om te planten.</span></p>
+                <p id="tuinDescription2">Tot nu toe is je tuin wel nog leeg <span>en je ruikt vooral onkruid.</span></p>
+
+                <table>
+                    <tr>
+                        <td></td>
+                        <th>Links</th>
+                        <th>Rechts</th>
+                    </tr>
+                    <tr>
+                        <th>Boven</th>
+                        <td id="links-boven">Bloembed <span class="inhoud-bloembed onkruid veldkers">met kleine veldkers.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                        <td id="rechts-boven">Bloembed <span class="inhoud-bloembed onkruid zevenblad">met zevenblad.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Onder</th>
+                        <td id="links-onder">Bloembed <span class="inhoud-bloembed onkruid schijnaardbei">met schijnaardbei.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                        <td id="rechts-onder">Bloembed <span class="inhoud-bloembed onkruid brandnetel">met brandnetel.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                    </tr>
+                </table>
+
+                <a href="#tuinieren-h3">Ga terug naar het tuinieren</a>
+                <a href="#bloempot-h4">Ga terug naar je bloempot</a>
+            </section>
+
+
+
+
+
+            <section>
+<!--     
+                <label for="bloembed" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus" id="bloembed" class="bloembed">
+                <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+    
+                <label for="bloembed2" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus2" id="bloembed2" class="bloembed">
+                <p id="bloemstatus2" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+    
+                <label for="bloembed3" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus3" id="bloembed3" class="bloembed">
+                <p id="bloemstatus3" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+    
+                <label for="bloembed4" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus4" id="bloembed4" class="bloembed">
+                <p id="bloemstatus4" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+    
+                <label for="bloembed5" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus5" id="bloembed5" class="bloembed">
+                <p id="bloemstatus5" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
+    
+                <label for="bloembed6" >Bloembed <span></span></label>
+                <input type="checkbox" aria-describedby="bloemstatus6" id="bloembed6" class="bloembed">
+                <p id="bloemstatus6" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p> -->
+            </section>
+
 
         </section>
 

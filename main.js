@@ -48,69 +48,77 @@ let selectedOption = selectBloemzaad.options[selectBloemzaad.selectedIndex];
 let selectedBloemTextContent  = selectedOption.text; 
 
 
-const selectedBloemNaam = selectedOption.dataset.bloem;
+let selectedBloemNaam = selectedOption.dataset.bloem;
 
 // als je een nieuwe optie selecterd dan verander de value 
 selectBloemzaad.addEventListener("change", (event) => {
+    const option = event.target.options[event.target.selectedIndex];
+
     selectedBloemValue = event.target.value;
     selectedBloemTextContent = event.target.options[event.target.selectedIndex].text;
+    selectedBloemNaam = option.dataset.bloem;
+    console.log(selectedBloemNaam)
 });
 
 
 
 
 
-const bloempotCheckboxes = document.querySelectorAll(".bloembed")
+// const bloempotCheckboxes = document.querySelectorAll(".bloembed")
 
-bloempotCheckboxes.forEach((bloempot) => {
-    bloempot.addEventListener("change", (event) => {
-        let description = bloempot.nextElementSibling
-
-
-        if (bloempot.checked) {
-            description.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
-            console.log(description.textContent)
-            if (geluidCheckbox.checked) {
-                bloemGeplantAudio.play();
-            }
+// bloempotCheckboxes.forEach((bloempot) => {
+//     bloempot.addEventListener("change", (event) => {
+//         let description = bloempot.nextElementSibling
 
 
-            // lijst zichtbaar maken voor screenreaders
-            tuinOverzicht.setAttribute('aria-hidden', 'false');
+//         if (bloempot.checked) {
+//             description.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
+//             console.log(description.textContent)
+//             if (geluidCheckbox.checked) {
+//                 bloemGeplantAudio.play();
+//             }
 
-            // li per bloempot; reuse als hij al bestaat
-            let li = tuinOverzicht.querySelector(`li[data-pot-id="${bloempot.id}"]`);
-            if (!li) {
-                li = document.createElement('li');
-                li.dataset.potId = bloempot.id;
-                tuinOverzicht.appendChild(li);
-            }
 
-            li.textContent = `${selectedBloemTextContent}`
+//             // lijst zichtbaar maken voor screenreaders
+//             tuinOverzicht.setAttribute('aria-hidden', 'false');
+
+//             // li per bloempot; reuse als hij al bestaat
+//             let li = tuinOverzicht.querySelector(`li[data-pot-id="${bloempot.id}"]`);
+//             if (!li) {
+//                 li = document.createElement('li');
+//                 li.dataset.potId = bloempot.id;
+//                 tuinOverzicht.appendChild(li);
+//             }
+
+//             li.textContent = `${selectedBloemTextContent}`
             
-        } else {
-            description.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
-            if (geluidCheckbox.checked) {
-                shovelGeluid.play();
-            }
-        }
-    })
+//         } else {
+//             description.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
+//             if (geluidCheckbox.checked) {
+//                 shovelGeluid.play();
+//             }
+//         }
+//     })
 
-})
+// })
 
 const checkbox = document.getElementById('premiumbloembed');
 const statusMessage = document.getElementById('status');
 const button = document.getElementById('verwijderOnkruid');
 const help = document.getElementById('bloembedhelp')
 const onkruidSpan = document.querySelector('#label span')
+const waterButton = document.getElementById('water')
+const verwijderBloemenButton = document.getElementById('verwijderBloemen')
+let waterInstance = 0
 
 
 button.addEventListener('click', () => {
 
     checkbox.disabled = false;
+    checkbox.ariaDisabled = false;
 
     statusMessage.textContent = 'De brandnetel is verwijdert. Je vingers doen nu wel een beetje pijn.';
-    help.textContent = 'Je kunt nu bloemen planten in dit bloembed.'
+    help.textContent = 'Je kunt nu bloemen planten in deze bloempot.'
     onkruidSpan.textContent = ''
 
     checkbox.focus();
@@ -131,6 +139,12 @@ checkbox.addEventListener('click', () => {
             
         } else {
             statusMessage.textContent = 'Je hebt de bloemen verwijdert... je voelt je een beetje verdrietig.';
+            button.classList.add("hidden")
+            waterButton.classList.add("hidden")
+            verwijderBloemenButton.classList.add("hidden")
+            console.log("verwijder bloemen button", verwijderBloemenButton)
+            onkruidSpan.textContent = ''
+
 
             if (geluidCheckbox.checked) {
                 shovelGeluid.play();
@@ -138,9 +152,7 @@ checkbox.addEventListener('click', () => {
         }
 })
 
-const waterButton = document.getElementById('water')
-const verwijderBloemenButton = document.getElementById('verwijderBloemen')
-let waterInstance = 0
+
 
 waterButton.addEventListener('click', () => {
     waterInstance++
@@ -170,44 +182,77 @@ waterButton.addEventListener('click', () => {
 })
 
 verwijderBloemenButton.addEventListener('click', () => {
-    statusMessage.textContent = 'Je kunt nu bloemen planten in dit bloembed.'
+    statusMessage.textContent = 'Je kunt nu bloemen planten in deze bloempot.'
     onkruidSpan.textContent = ''
     checkbox.checked = false;
     checkbox.focus();
+    verwijderBloemenButton.classList.add("hidden")
 })
 
 
 // overzicht
 
-const tuinDescription = document.getElementById("tuinDescription");
-const tuinDescription2 = document.getElementById("tuinDescription2");
-const bloembedCheckboxes = document.querySelectorAll(".bloembed");
+// const tuinDescription = document.getElementById("tuinDescription");
+// const tuinDescription2 = document.getElementById("tuinDescription2");
+// const bloembedCheckboxes = document.querySelectorAll(".bloembed");
 
-// functie die je tuin-tekst bijwerkt
-function updateTuinBeschrijving() {
-    const isIetsGeplant = Array.from(bloembedCheckboxes).some(cb => cb.checked);
+// // functie die je tuin-tekst bijwerkt
+// function updateTuinBeschrijving() {
+//     const isIetsGeplant = Array.from(bloembedCheckboxes).some(cb => cb.checked);
 
-    if (isIetsGeplant) {
-        // tekst aanpassen
-        tuinDescription.textContent =
-            "Je staat in je tuin en het ruikt heerlijk. Je herkent de volgende bloemengeuren:";
+//     if (isIetsGeplant) {
+//         // tekst aanpassen
+//         tuinDescription.textContent =
+//             "Je staat in je tuin en het ruikt heerlijk. Je herkent de volgende bloemengeuren:";
 
-        // tweede tekst verbergen
-        tuinDescription2.classList.add("hidden");
-    } else {
-        // terug naar “lege tuin” tekst (pas aan aan jouw originele tekst)
-        tuinDescription.textContent =
-            "Je staat voor je tuin en ruikt nu al alle lekkere bloemen die je van plan bent om te planten.";
-        tuinDescription2.classList.remove("hidden");
+//         // tweede tekst verbergen
+//         tuinDescription2.classList.add("hidden");
+//     } else {
+//         // terug naar “lege tuin” tekst (pas aan aan jouw originele tekst)
+//         tuinDescription.textContent =
+//             "Je staat voor je tuin en ruikt nu al alle lekkere bloemen die je van plan bent om te planten.";
+//         tuinDescription2.classList.remove("hidden");
+//     }
+// }
+
+// // alle bloembed-checkboxen dezelfde listener geven
+// bloembedCheckboxes.forEach((bloembed) => {
+//     bloembed.addEventListener("change", updateTuinBeschrijving);
+// });
+
+// // optioneel: bij eerste load ook meteen goede toestand zetten
+// updateTuinBeschrijving();
+
+
+const bloembedSelect = document.getElementById("bloembed-select");
+const actiesSelect = document.getElementById("tuinier-acties");
+
+bloembedSelect.addEventListener("change", function () {
+    // 1. Link de geselecteerde option aan de td met hetzelfde id
+    const selectedValue = this.value;
+    const linkedBloembed = document.getElementById(selectedValue);
+
+    // Veiligheidscheck
+    if (!linkedBloembed) {
+        Array.from(actiesSelect.options).forEach(opt => opt.disabled = false);
+        return;
     }
-}
 
-// alle bloembed-checkboxen dezelfde listener geven
-bloembedCheckboxes.forEach((bloembed) => {
-    bloembed.addEventListener("change", updateTuinBeschrijving);
+    // 2. Check of er een span met class "onkruid" in de td zit
+    const hasOnkruid = linkedBloembed.querySelector(".onkruid") !== null;
+
+    if (hasOnkruid) {
+        // Alle opties uitschakelen behalve "onkruid-wieden"
+        Array.from(actiesSelect.options).forEach(option => {
+            option.disabled = option.value !== "onkruid-wieden";
+        });
+
+        // Automatisch "onkruid-wieden" selecteren
+        actiesSelect.value = "onkruid-wieden";
+    } else {
+        // Anders: alle opties weer inschakelen
+        Array.from(actiesSelect.options).forEach(option => {
+            option.disabled = false;
+        });
+    }
 });
-
-// optioneel: bij eerste load ook meteen goede toestand zetten
-updateTuinBeschrijving();
-
-
