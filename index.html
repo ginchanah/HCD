@@ -94,7 +94,8 @@
                     <option value="rechts-onder">Rechts Onder</option>
                 </select>
 
-                <p class="uitleg">In dit bloembed zit tuinkers of whatever. Dit is een onkruid. Maar je kunt het eten en het is lekker.</p>
+                <!-- hier nog een uitleg p -->
+                <p class="uitleg" aria-live="assertive" role="status" aria-atomic="true">In dit bloembed zit onkruid.</p>
 
                 <label for="tuinier-acties">Kies een actie om uit te voeren in je bloembed</label>
 
@@ -105,25 +106,28 @@
                     <option value="bloemen-verwijderen">Bloemen verwijderen</option>
                 </select>
 
-                <section>
+                <section class="onkruid-wieden-section">
                     <h4>Onkruid wieden</h4>
+                    <button>Onkruid Wieden</button>
                 </section>
 
-                <section>
+                <section class="bloemen-planten-section">
                     <h4>Bloemen Planten</h4>
-                    <!-- <label for="bloemzaadjes">Kies een bloemenzaadje</label>
+                    <label for="bloemzaadjes2">Kies een bloemenzaadje</label>
                 
-                    <select name="bloemzaadjes" id="bloemzaadjes">
+                    <select name="bloemzaadjes" id="bloemzaadjes2">
                         <option value="tulp" data-bloem="Tulpen">Tulpen zaad</option>
                         <option value="klaproos" data-bloem="Klaprozen">Klaprozen zaad</option>
                         <option value="cosmea" data-bloem="Cosmea">Cosmea zaad</option>
                         <option value="korenbloem" data-bloem="Korenbloem">Korenbloem zaad</option>
                         <option value="lavendel" data-bloem="Lavendel">Lavendel zaad</option>
                         <option value="goudsbloem" data-bloem="Goudsbloem">Goudsbloem zaad</option>
-                    </select> -->
+                    </select>
+
+                    <button>Plant <span class="gekozen-bloem"></span> in <span class="gekozen-bloembed"></span></button>
                 </section>
 
-                <section>
+                <!-- <section>
                     <h4>Water geven</h4>
 
                 </section>
@@ -131,7 +135,7 @@
                 <section>
                     <h4>Bloemen verwijderen</h4>
 
-                </section>
+                </section> -->
 
             </section>
 

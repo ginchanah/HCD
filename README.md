@@ -227,6 +227,7 @@ En: misschien is het handig om het tuinieren en de tuin apart te hebben!
 
 ## Dag 5
 Wat heb ik vandaag gedaan?
+- Checkout gedaan met Sabrina
 - Ik heb de feedback van Jules verwerkt een een aparte tuin en tuinier sectie gemaakt. Maar ik heb wel ook mijn oude design erin gelaten om aan Ihab te vragen welke hij fijner vindt. 
 
 ## Vragen voor Ihab
@@ -234,3 +235,9 @@ Wat heb ik vandaag gedaan?
 - vind je het fijn als de focus redirect wordt?
 
 - fijner om overzicht bij bloempot zelf te hebben en bij de bloempot zelf te tuinieren OF wil je juist tuinieren en bloempot apart
+
+- hoe weet je dat het overzicht veranderd? 
+
+- moet je springen naar zaden als dingen veranderen? hoe weet je of dingen veranderen?
+
+- 
