@@ -15,7 +15,16 @@
     a {
         color: black;
     }
+
+    #dark-mode {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        margin: 0;
+    }
 }
+
+
 
 
 :root:not(:has(#blind-mode:checked)) #blind-mode-group {
