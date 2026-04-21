@@ -233,11 +233,17 @@ Wat heb ik vandaag gedaan?
 ## Vragen voor Ihab
 - wil je een aparte select voor elke bloem of juist eentje waar al je bloemzaden zitten?
 - vind je het fijn als de focus redirect wordt?
-
 - fijner om overzicht bij bloempot zelf te hebben en bij de bloempot zelf te tuinieren OF wil je juist tuinieren en bloempot apart
-
 - hoe weet je dat het overzicht veranderd? 
-
 - moet je springen naar zaden als dingen veranderen? hoe weet je of dingen veranderen?
+- waar moet je springen als dingen veranderen? hoe moet je springen? 
 
+
+
+## Dag 6 
+### Test met Ihab
+Mitchell:
+- popover werkt niet
+- meerdere stemmen tergelijk
+- reizen muziek sport anime lezen
 - 
