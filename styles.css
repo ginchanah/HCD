@@ -38,9 +38,6 @@
     }
 }
 
-:root:has(#blind-mode:checked) #blind-mode-group {
-    width: min-content;
-}
 
 #blind-mode-group {
     padding: 1rem;
