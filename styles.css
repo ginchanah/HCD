@@ -22,8 +22,9 @@
         width: 0;
         margin: 0;
     }
-}
 
+    
+}
 
 
 
@@ -34,6 +35,10 @@
     label {
         background-color: white;
     }
+}
+
+:root:has(#blind-mode:checked) {
+    width: min-content;
 }
 
 #blind-mode-group {

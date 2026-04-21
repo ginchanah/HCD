@@ -242,8 +242,61 @@ Wat heb ik vandaag gedaan?
 
 ## Dag 6 
 ### Test met Ihab
-Mitchell:
-- popover werkt niet
-- meerdere stemmen tergelijk
-- reizen muziek sport anime lezen
-- 
+
+
+
+- hij leest alle zaadjes
+- onkruid is verwijdert
+maar hij snapt niet waar hij dan terug moet
+lavendel zaad
+water geven aan je bloemen werkt
+
+
+
+bloembedden
+kruiden
+onkruid wieden
+kies een actie maar je kan alleen onkruid wieden, de disabled knoppen worden niet voorgelezen
+
+overzicht tekst
+
+redelijk duidelijk
+- als je in alle bloembedden een andere bloem zet
+- overzicht wordt geupdated maar dat wordt dan automatisch voorgelezen
+- dynamischer 
+- onkruid laten groeien, en dat ook water geven
+- waarom zou je onkruid verwijderen
+- verwijder onkruid verspringen goed
+- onduidelijk 
+- geluidseffecten meer, alleen als je het plant tot nu toe verwijderen knop 
+- oohh als je een tweede bloem plant gaat ie meteen dood, dat aanpassen
+- ook meer opties voor onkruid
+- verspringen naar interactie met button is fijn
+- water geven kan hij selecteren?
+
+- overzicht is lastig
+- tabel is lastig want hij kan er niet mee interageren
+- overzicht van acties bij elke bloem
+
+- waar is links boven waar is rechts onder, hoe kan ik ervoor zorgen dat hij het kan bewerken
+
+- rechts boven -> bij selectie vakje zeggen wat er 
+
+- je kan nog steeds alleen onkruid wieden ook al zitten er al tulpen in 
+
+- misschien opties niet disables maar gewoon helemaal weghalen en andere dingen toevoegen
+
+- geplante zevenblad is verwarrend, hij denkt dat die leeg is 
+
+- button naast het bloembed in overzicht waar je terug gaat naar bewerken
+- ik moet de tuinbeschrijving aanpassen want nu staat er altijd dat de tuin leeg is hihi
+
+- bevindingen: zowel mijn idee als ook die van jules werken! yippie. 
+
+- elke keer dat je de select wissel moet je het gelinkte veld aanpassen. als je een veld bewerkt en dan het veld wisselt blijven er dezelfde opties bestaan
+- vgm iets van als er GEEN class onkruid op staat moet je class bloem erop zetten en op basis daarvan weer de opties voor de select aanpassen
+- dus als je meer dan een select optie kiest blijven de mogelijkheden hetzelfde
+- hij veranderd wel als er onkruid inzit maar blijft op onkruid wieden als er al bloemen inzitten, dat moet anders
+- maar bloemen planten is dan ook nog zichtbaar? oh no. bug fixes!!
+- tabel aria-labelledby h2
+- focus verspringen goeddddd zorg ervoor dat dat bij elke button gebeurt
