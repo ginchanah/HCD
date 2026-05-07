@@ -55,85 +55,85 @@ Sela - sfeer bepalen met knop
 
 Algemene vragen:
 - Hoe gebruik jij het toestenbord en sneltoesten nu?
-Hij heeft zijn eigen toetsenbord maar dat hoort niet uit te maken
+    - Hij heeft zijn eigen toetsenbord maar dat hoort niet uit te maken
 
 - Een eigen website voor alleen maar sneltoetsen
-Maakt het bruikbaarder dan handleiding want anders voegt het weer niks toe. Met AI zoeken naar sneltoetsen? Echt goed filteren. Maar je zou ook gewoon kunnen googelen of chatgpt vragen?
+    - Maakt het bruikbaarder dan handleiding want anders voegt het weer niks toe. Met AI zoeken naar sneltoetsen? Echt goed filteren. Maar je zou ook gewoon kunnen googelen of chatgpt vragen?
 
 - Per screenreader of per browser?
-Er zijn geen screenreaders van elke browsers. Edge kan het wel voorlezen maar de browser heeft geen ingebouwde screenreader
-Browserspecifieke sneltoetsen
-Screenreader en browser in Mac en Windows alles anders
+    - Er zijn geen screenreaders van elke browsers. Edge kan het wel voorlezen maar de browser heeft geen ingebouwde screenreader 
+    - Browserspecifieke sneltoetsen
+    - Screenreader en browser in Mac en Windows alles anders
 
 - U gebruikt veel sneltoetsen. Er zijn website specifieke sneltoetsen hoe kom je daar achter?
-Komt eigenlijk niet voor. Wel voor verschillende browsers
+    - Komt eigenlijk niet voor. Wel voor verschillende browsers
 
-- Voorkeuren, als je op een website komt komt er een modal om te navigeren op de website, een sectie waarbij je kunt kiezen vanaf waar je gaat tabben. Shortcuts zelf bouwen om te skippen naar content. Zou je dat gebruiken?
-Nee eigentlijk niet.. je kunt al tussen koppen skippen en naar volgende plaatje, knop, etc. Meeste websites hebben al een skip-to-content link
+- Voorkeuren, als je op een website komt komt er een modal om te navigeren op de website, een sectie waarbij je kunt kiezen vanaf waar je gaat tabben.  Shortcuts zelf bouwen om te skippen naar content. Zou je dat gebruiken?
+    - Nee eigentlijk niet.. je kunt al tussen koppen skippen en naar volgende plaatje, knop, etc. Meeste websites hebben al een skip-to-content link
 
 - Waar wil je dat de focus begint op een website?
-Hangt er een beetje vanaf welke website het is, er is niet een goede optie
+    - Hangt er een beetje vanaf welke website het is, er is niet een goede optie
 
 - Welke sneltoetsen zou je willlen die nog niet bestaan
-Het zijn er al zo veel er hoeven niet echt meer te komen
+    - Het zijn er al zo veel er hoeven niet echt meer te komen
 
 - Gebruik jij websites liever op telefoon of laptop?
-Hangt er vanaf waar je ben. Op laptop kun je dingen sneller regelen
+    - Hangt er vanaf waar je ben. Op laptop kun je dingen sneller regelen
 
 - Als je artikelen leest voor politicologie wil je dan goed kunnen skippen?
-Ja inhouds opgave enzo, hangt er van af hoe lang dat is
-Extenties om te skippen in artikelen kan handig zijn
+    - Ja inhouds opgave enzo, hangt er van af hoe lang dat is
+    - Extenties om te skippen in artikelen kan handig zijn
 
 - Gebruikt u nog meer hulpmiddelen?
-Alleen stok telefoon en laptop
+    - Alleen stok telefoon en laptop
 
 - Wat is moeilijk om te gebruiken
-Visuele interfaces zijn verschrikkelijk. Insta360 studio reageert op geen enkel input. Een groot plaatje
+    - Visuele interfaces zijn verschrikkelijk. Insta360 studio reageert op geen enkel input. Een groot plaatje
 
 - Gebruikt u ooit een muis?
-nee niet echt
+    - nee niet echt
 
 - trukjes om minder toegankelijke websites te gebruiken?
-Als knoppen geen labels hebben kun je het uit je hoofd leren wat die knoppen allemaal doen
+    - Als knoppen geen labels hebben kun je het uit je hoofd leren wat die knoppen allemaal doen
 
 - Is het handig om samenvattingen te krijgen voor spraakberichten?
-Ja wel maar probleem met AI is privacy, je wil niet iemands gegevens zomaar in AI gooien. Stel iemand zit in een breakup dan wil je niet dat AI dat samenvat.
+    - Ja wel maar probleem met AI is privacy, je wil niet iemands gegevens zomaar in AI gooien. Stel iemand zit in een breakup dan wil je niet dat AI dat samenvat.
 
 - Bepalen of iemand vaak sneltoetsen gebruikt, wat heb je eraan?
-Weet ik ook niet. 
+    - Weet ik ook niet. 
 
 - Is dat nuttig om op te slaan waar je begint op een pagina?
-Naja wel misschien maar als je het vaak bezoekt weet je al waar alles zit dus daar komt je sws als met een toets omdat je weet waar je heen moet. Maar als je websites eens in de zoveel tijd gebruikt en dan dingen opslaat sure why not
+    - Naja wel misschien maar als je het vaak bezoekt weet je al waar alles zit dus daar komt je sws als met een toets omdat je weet waar je heen moet. Maar als je websites eens in de zoveel tijd gebruikt en dan dingen opslaat sure why not
 
 - Waar loop je zelf het vaakst tegen aan?
-Vaker mobiele apps dan desktop apps maar gebeurd allemaal. Helemaal ontoegankelijk tot irritant om te gebruiken. Overzicht onbreekt vaak, samenvatting van wat er in de omgeving gebeurd, wat de essentie is van een pagina, alle linkjes en kort en bondig, wat is hier? Niet zo zeer gericht op navigatie maar essesntie en links
+    - Vaker mobiele apps dan desktop apps maar gebeurd allemaal. Helemaal ontoegankelijk tot irritant om te gebruiken. Overzicht onbreekt vaak, samenvatting van wat er in de omgeving gebeurd, wat de essentie is van een pagina, alle linkjes en kort en bondig, wat is hier? Niet zo zeer gericht op navigatie maar essesntie en links
 
 - Mitchell wil een extention die de manier van spreken kan aanpassen
-Ja screenreaders zijn heel saai, de toekomst is waarschijnlijk dat dingen vervangen worden door AI stemmen, dat is wel leuk. Screenreaders zijn functioneel maar niet plesierig
+    - Ja screenreaders zijn heel saai, de toekomst is waarschijnlijk dat dingen vervangen worden door AI stemmen, dat is wel leuk. Screenreaders zijn functioneel maar niet plesierig
 
 - Waardoor raak je snel de draad kwijt op een website?
-Slechte labels. Hij kan redelijk goed met technologie omgaan dus er zijn niet zo veel dingen waar hij tegen aanloopt, het moet gewoon goed functioneren
+    - Slechte labels. Hij kan redelijk goed met technologie omgaan dus er zijn niet zo veel dingen waar hij tegen aanloopt, het moet gewoon goed functioneren
 
 - Is de sfeer van een website belangrijk voor jou?
-Als het voor plezier is kan het leuk zijn maar voor de noodzaak niet, niet bij belastingdienst. Screenreaders zijn heel functioneel dus ja er is geen sfeer. 
+    - Als het voor plezier is kan het leuk zijn maar voor de noodzaak niet, niet bij belastingdienst. Screenreaders zijn heel functioneel dus ja er is geen sfeer. 
 
 - Wat draagt gevoel van sfeer wel over?
-Plaatjes omschrijven, knoppen...
+    - Plaatjes omschrijven, knoppen...
 
 - Stel dat links of knoppem geluiden maken zou dat leuk zijn?
-Eventjes wel maar op een bepaald moment wordt het ook irritant. 
+    - Eventjes wel maar op een bepaald moment wordt het ook irritant. 
 
 - Wanneer wil je wel sfeer?
-Manier van schrijven, bij social media is er wel een sfeer, posts van mensen waar mensen echt wat te zeggen hebben. Bij social media zijn er persoonlijke verhalen dus daar ben je meer geïntereseerd in de sfeer. Een brand, een persoonlijke website. Producten voor je huis? Bij het shoppen? 
+    - Manier van schrijven, bij social media is er wel een sfeer, posts van mensen waar mensen echt wat te zeggen hebben. Bij social media zijn er persoonlijke verhalen dus daar ben je meer geïntereseerd in de sfeer. Een brand, een persoonlijke website. Producten voor je huis? Bij het shoppen? 
 
 - Hoeveel tijd zou je aan de sfeer willen besteden?
-minder dan een halfe minuut per pagina
+    - minder dan een halfe minuut per pagina
 
 - Hoe wil je de sfeer omschreven hebben?
-Kleuren en layout, welke kleur heeft de pagina, is de tekst bold. Zitten er patrinen in de layout, hoe zien de icoontjes eruit, is dat belangrijk voor de sfeer? Wat versta je onder sfeer? Kun je instellen hoe gedetailleerd dingen omschreven moeten worden? Geluiden zijn ook belangrijk voor een sfeer? Kan leuk zijn maar gewoon niet te veel, aan en uit zetten moet mogelijk zijn. Geluid moet pas aangaan als je dat wilt, on command en niet tegelijkertijd met de screenreader.
+    - Kleuren en layout, welke kleur heeft de pagina, is de tekst bold. Zitten er patrinen in de layout, hoe zien de icoontjes eruit, is dat belangrijk voor de sfeer? Wat versta je onder sfeer? Kun je instellen hoe gedetailleerd dingen omschreven moeten worden? Geluiden zijn ook belangrijk voor een sfeer? Kan leuk zijn maar gewoon niet te veel, aan en uit zetten moet mogelijk zijn. Geluid moet pas aangaan als je dat wilt, on command en niet tegelijkertijd met de screenreader.
 
 - Zijn er extenties die je al gebruikt als hulpmiddel?
-Nee
+    - Nee
 
 ### Bevindingen
 Eigenlijk zijn de meeste van de opdrachten die Berend heeft bedacht niet echt van toepassing voor Ihab. Ihab zei bij heel veel opdrachten, zoals een library van sneltoetsen maken, dat dat niet echt nodig was omdat je het ook gewoon kunt googelen. Verder zei hij dat hij niet echt met extensies werkt omdat hij goed genoeg kan omgaan met zijn screenreader en dat hij ook niet echt behoefte heeft aan extra functionaliteiten omdat alles wat al bestaat al goed genoeg is. 
