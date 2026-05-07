@@ -1,6 +1,12 @@
 # Human Centered Design
 
-Hoe maak je een Website voor één persoon met één specifieke beperking?
+## Hoe maak je een Website voor één persoon met één specifieke beperking?
+Ik moest een gepersonaliseerde website maken voor Ihab, een blind persoon die een screenreader gebruikt.
+Hij loop niet echt ergens tegenaan in het web, behalve als websites slecht gemaakt zijn. Er leek dus geen duidelijk probleem te zijn dat ik door een prototype voor hem kon oplossen, dus ik besloot om een website te maken die een spelletje is.
+Het werkt voor hem, het lost niks op maar het levert ook geen problemen op. En in het beste geval is het ook nog leuk om te spelen.
+De perfecte oplossing voor de opdracht dus!
+
+
 
 ## Dag 1
 Ik was ziek dus ik kon er helaas niet bij zijn
