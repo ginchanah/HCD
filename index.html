@@ -91,10 +91,10 @@
                 <label for="bloembed-select">Kies een bloembed om in te werken</label>
 
                 <select name="bloembedden" id="bloembed-select">
-                    <option value="links-boven">Links Boven</option>
-                    <option value="rechts-boven">Rechts Boven</option>
-                    <option value="links-onder">Links Onder</option>
-                    <option value="rechts-onder">Rechts Onder</option>
+                    <option value="links-boven" id="links-boven-option">Links Boven</option>
+                    <option value="rechts-boven" id="rechts-boven-option">Rechts Boven</option>
+                    <option value="links-onder" id="links-onder-option">Links Onder</option>
+                    <option value="rechts-onder" id="rechts-onder-option">Rechts Onder</option>
                 </select>
 
                 <!-- hier nog een uitleg p -->
@@ -104,17 +104,16 @@
 
                 <select name="tuinier-acties" id="tuinier-acties">
                     <option value="onkruid-wieden">Onkruid wieden</option>
+                    <option value="onkruid-water-geven">Onkruid water geven</option>
                     <option value="bloemen-planten">Bloemen planten</option>
-                    <option value="water-geven">Water geven</option>
-                    <option value="bloemen-verwijderen">Bloemen verwijderen</option>
                 </select>
 
-                <section class="onkruid-wieden-section">
+                <section class="onkruid-wieden-section actie-section">
                     <h4>Onkruid wieden</h4>
                     <button>Onkruid Wieden</button>
                 </section>
 
-                <section class="bloemen-planten-section">
+                <section class="bloemen-planten-section actie-section">
                     <h4>Bloemen Planten</h4>
                     <label for="bloemzaadjes2">Kies een bloemenzaadje</label>
                 
@@ -129,23 +128,19 @@
 
                     <button>Plant <span class="gekozen-bloem"></span> in <span class="gekozen-bloembed"></span></button>
                 </section>
-
-                <!-- <section>
-                    <h4>Water geven</h4>
+                
+                <section class="onkruid-water-geven-section actie-section">
+                    <h4>Onkruid water geven</h4>
+                    <button>Water geven</button>
 
                 </section>
-                
-                <section>
-                    <h4>Bloemen verwijderen</h4>
-
-                </section> -->
 
             </section>
 
             <section>
                 <h3 id="overzichth2">Overzicht van je tuin</h3>
-                <p id="tuinDescription">Je staat voor je tuin en ruikt <span>nu al</span> alle lekkere bloemen die je <span>van plan bent om te planten.</span></p>
-                <p id="tuinDescription2">Tot nu toe is je tuin wel nog leeg <span>en je ruikt vooral onkruid.</span></p>
+                <p id="tuinDescription" aria-live="polite" aria-atomic="true">Je staat voor je tuin en ruikt nu al alle lekkere bloemen die je van plan bent om te planten. Tot nu toe is je tuin wel nog leeg en je ruikt vooral onkruid.</p>
+            
 
                 <table>
                     <tr>
@@ -155,49 +150,18 @@
                     </tr>
                     <tr>
                         <th>Boven</th>
-                        <td id="links-boven">Bloembed <span class="inhoud-bloembed onkruid veldkers">met kleine veldkers.</span> <span class="uitleg-inhoud-bloembed"></span></td>
-                        <td id="rechts-boven">Bloembed <span class="inhoud-bloembed onkruid zevenblad">met zevenblad.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                        <td id="links-boven">Bloembed <span class="inhoud-bloembed onkruid veldkers">met kleine veldkers.</span> <span class="uitleg-inhoud-bloembed"></span> <a href="#links-boven-option">Ga terug naar tuinier-acties</a></td>
+                        <td id="rechts-boven">Bloembed <span class="inhoud-bloembed onkruid zevenblad">met zevenblad.</span> <span class="uitleg-inhoud-bloembed"></span> <a href="#rechts-boven-option">Ga terug naar tuinier-acties</a></td>
                     </tr>
                     <tr>
                         <th>Onder</th>
-                        <td id="links-onder">Bloembed <span class="inhoud-bloembed onkruid schijnaardbei">met schijnaardbei.</span> <span class="uitleg-inhoud-bloembed"></span></td>
-                        <td id="rechts-onder">Bloembed <span class="inhoud-bloembed onkruid brandnetel">met brandnetel.</span> <span class="uitleg-inhoud-bloembed"></span></td>
+                        <td id="links-onder">Bloembed <span class="inhoud-bloembed onkruid schijnaardbei">met schijnaardbei.</span> <span class="uitleg-inhoud-bloembed"></span> <a href="#links-onder-option">Ga terug naar tuinier-acties</a></td>
+                        <td id="rechts-onder">Bloembed <span class="inhoud-bloembed onkruid brandnetel">met brandnetel.</span> <span class="uitleg-inhoud-bloembed"></span> <a href="#rechts-onder-option">Ga terug naar tuinier-acties</a></td>
                     </tr>
                 </table>
 
                 <a href="#tuinieren-h3">Ga terug naar het tuinieren</a>
                 <a href="#bloempot-h4">Ga terug naar je bloempot</a>
-            </section>
-
-
-
-
-
-            <section>
-<!--     
-                <label for="bloembed" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus" id="bloembed" class="bloembed">
-                <p id="bloemstatus" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
-    
-                <label for="bloembed2" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus2" id="bloembed2" class="bloembed">
-                <p id="bloemstatus2" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
-    
-                <label for="bloembed3" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus3" id="bloembed3" class="bloembed">
-                <p id="bloemstatus3" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
-    
-                <label for="bloembed4" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus4" id="bloembed4" class="bloembed">
-                <p id="bloemstatus4" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
-    
-                <label for="bloembed5" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus5" id="bloembed5" class="bloembed">
-                <p id="bloemstatus5" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p>
-    
-                <label for="bloembed6" >Bloembed <span></span></label>
-                <input type="checkbox" aria-describedby="bloemstatus6" id="bloembed6" class="bloembed">
-                <p id="bloemstatus6" aria-live="polite">Je hebt nog geen bloem geplant in dit bloembed</p> -->
             </section>
 
 

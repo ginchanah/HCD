@@ -63,45 +63,6 @@ selectBloemzaad.addEventListener("change", (event) => {
 
 
 
-
-// const bloempotCheckboxes = document.querySelectorAll(".bloembed")
-
-// bloempotCheckboxes.forEach((bloempot) => {
-//     bloempot.addEventListener("change", (event) => {
-//         let description = bloempot.nextElementSibling
-
-
-//         if (bloempot.checked) {
-//             description.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
-//             console.log(description.textContent)
-//             if (geluidCheckbox.checked) {
-//                 bloemGeplantAudio.play();
-//             }
-
-
-//             // lijst zichtbaar maken voor screenreaders
-//             tuinOverzicht.setAttribute('aria-hidden', 'false');
-
-//             // li per bloempot; reuse als hij al bestaat
-//             let li = tuinOverzicht.querySelector(`li[data-pot-id="${bloempot.id}"]`);
-//             if (!li) {
-//                 li = document.createElement('li');
-//                 li.dataset.potId = bloempot.id;
-//                 tuinOverzicht.appendChild(li);
-//             }
-
-//             li.textContent = `${selectedBloemTextContent}`
-            
-//         } else {
-//             description.textContent = "Je hebt nog geen bloem geplant in deze bloempot";
-//             if (geluidCheckbox.checked) {
-//                 shovelGeluid.play();
-//             }
-//         }
-//     })
-
-// })
-
 const checkbox = document.getElementById('premiumbloembed');
 const statusMessage = document.getElementById('status');
 const button = document.getElementById('verwijderOnkruid');
@@ -112,6 +73,7 @@ const verwijderBloemenButton = document.getElementById('verwijderBloemen')
 let waterInstance = 0
 
 
+// bloempot button
 button.addEventListener('click', () => {
 
     checkbox.disabled = false;
@@ -126,6 +88,8 @@ button.addEventListener('click', () => {
     button.classList.add("hidden")
 });
 
+
+// bloemen planten/verwijderen
 checkbox.addEventListener('click', () => {
     if (checkbox.checked) {
             statusMessage.textContent = `Je hebt ${selectedBloemTextContent} geplant!`;
@@ -153,7 +117,7 @@ checkbox.addEventListener('click', () => {
 })
 
 
-
+// bloemen water geven
 waterButton.addEventListener('click', () => {
     waterInstance++
 
@@ -178,352 +142,242 @@ waterButton.addEventListener('click', () => {
         verwijderBloemenButton.classList.remove('hidden')
     }
     
-    
 })
 
+// bloemen verwijderen
 verwijderBloemenButton.addEventListener('click', () => {
     statusMessage.textContent = 'Je kunt nu bloemen planten in deze bloempot.'
     onkruidSpan.textContent = ''
     checkbox.checked = false;
     checkbox.focus();
     verwijderBloemenButton.classList.add("hidden")
+    if (geluidCheckbox.checked) {
+        shovelGeluid.play();
+    }
 })
 
 
-// overzicht
-
-// const tuinDescription = document.getElementById("tuinDescription");
-// const tuinDescription2 = document.getElementById("tuinDescription2");
-// const bloembedCheckboxes = document.querySelectorAll(".bloembed");
-
-// // functie die je tuin-tekst bijwerkt
-// function updateTuinBeschrijving() {
-//     const isIetsGeplant = Array.from(bloembedCheckboxes).some(cb => cb.checked);
-
-//     if (isIetsGeplant) {
-//         // tekst aanpassen
-//         tuinDescription.textContent =
-//             "Je staat in je tuin en het ruikt heerlijk. Je herkent de volgende bloemengeuren:";
-
-//         // tweede tekst verbergen
-//         tuinDescription2.classList.add("hidden");
-//     } else {
-//         // terug naar “lege tuin” tekst (pas aan aan jouw originele tekst)
-//         tuinDescription.textContent =
-//             "Je staat voor je tuin en ruikt nu al alle lekkere bloemen die je van plan bent om te planten.";
-//         tuinDescription2.classList.remove("hidden");
-//     }
-// }
-
-// // alle bloembed-checkboxen dezelfde listener geven
-// bloembedCheckboxes.forEach((bloembed) => {
-//     bloembed.addEventListener("change", updateTuinBeschrijving);
-// });
-
-// // optioneel: bij eerste load ook meteen goede toestand zetten
-// updateTuinBeschrijving();
-
-
-// const bloembedSelect = document.getElementById("bloembed-select");
-// const actiesSelect = document.getElementById("tuinier-acties");
-
-// bloembedSelect.addEventListener("change", function () {
-//     // 1. Link de geselecteerde option aan de td met hetzelfde id
-//     const selectedValue = this.value;
-//     const linkedBloembed = document.getElementById(selectedValue);
-
-//     // Veiligheidscheck
-//     if (!linkedBloembed) {
-//         Array.from(actiesSelect.options).forEach(opt => opt.disabled = false);
-//         return;
-//     }
-
-//     // 2. Check of er een span met class "onkruid" in de td zit
-//     const hasOnkruid = linkedBloembed.querySelector(".onkruid") !== null;
-
-//     if (hasOnkruid) {
-//         // Alle opties uitschakelen behalve "onkruid-wieden"
-//         Array.from(actiesSelect.options).forEach(option => {
-//             option.disabled = option.value !== "onkruid-wieden";
-//         });
-
-//         // Automatisch "onkruid-wieden" selecteren
-//         actiesSelect.value = "onkruid-wieden";
-//     } else {
-//         // Anders: alle opties weer inschakelen
-//         Array.from(actiesSelect.options).forEach(option => {
-//             option.disabled = false;
-//         });
-//     }
-// });
 
 
 
 
 
+const bloembedSelect = document.getElementById("bloembed-select");
+const actiesSelect = document.getElementById("tuinier-acties");
+const actieSections    = document.querySelectorAll('.actie-section');
+const onkruidSection = document.querySelector(".onkruid-wieden-section");
+const bloemenSection = document.querySelector(".bloemen-planten-section");
+const onkruidButton = document.querySelector(".onkruid-wieden-section button");
+const plantButton = document.querySelector(".bloemen-planten-section button");
+const bloemzaadjesSelect = document.getElementById("bloemzaadjes2");
+const uitlegP = document.querySelector(".uitleg");
 
-// const bloembedSelect = document.getElementById("bloembed-select");
-//     const actiesSelect = document.getElementById("tuinier-acties");
-//     const onkruidSection = document.querySelector(".onkruid-wieden-section");
-//     const bloemenSection = document.querySelector(".bloemen-planten-section");
-//     const onkruidButton = document.querySelector(".onkruid-wieden-section button");
-//     const plantButton = document.querySelector(".bloemen-planten-section button");
-//     const bloemzaadjesSelect = document.getElementById("bloemzaadjes2");
-//     const uitlegP = document.querySelector(".uitleg");
-
-//     let linkedBloembed = null;
-
-//     // 1. Bloembed selectie
-//     bloembedSelect.addEventListener("change", function () {
-//         const selectedValue = this.value;
-//         linkedBloembed = document.getElementById(selectedValue);
-
-//         if (!linkedBloembed) {
-//             Array.from(actiesSelect.options).forEach(opt => {
-//                 opt.disabled = false;
-//                 opt.removeAttribute("aria-disabled");
-//             });
-//             return;
-//         }
-
-//         // Check of er onkruid in zit
-//         const hasOnkruid = linkedBloembed.querySelector(".onkruid") !== null;
-
-//         if (hasOnkruid) {
-//             // Alleen "onkruid-wieden" beschikbaar
-//             Array.from(actiesSelect.options).forEach(option => {
-//                 if (option.value !== "onkruid-wieden") {
-//                     option.disabled = true;
-//                     option.setAttribute("aria-disabled", "true");
-//                 } else {
-//                     option.disabled = false;
-//                     option.removeAttribute("aria-disabled");
-//                 }
-//             });
-//             actiesSelect.value = "onkruid-wieden";
-            
-//             // Trigger change event om section te tonen
-//             actiesSelect.dispatchEvent(new Event("change"));
-//         } else {
-//             // Alle opties beschikbaar behalve onkruid-wieden
-//             Array.from(actiesSelect.options).forEach(option => {
-//                 if (option.value === "onkruid-wieden") {
-//                     option.disabled = true;
-//                     option.setAttribute("aria-disabled", "true");
-//                 } else {
-//                     option.disabled = false;
-//                     option.removeAttribute("aria-disabled");
-//                 }
-//             });
-//         }
-//     });
-
-//     // 2. Actie selectie - toon juiste section
-//     actiesSelect.addEventListener("change", function () {
-//         // Verberg alle sections (voeg hidden class toe)
-//         onkruidSection.classList.add("hidden");
-//         bloemenSection.classList.add("hidden");
-
-//         // Toon de juiste section (verwijder hidden class)
-//         if (this.value === "onkruid-wieden") {
-//             onkruidSection.classList.remove("hidden");
-//         } else if (this.value === "bloemen-planten") {
-//             bloemenSection.classList.remove("hidden");
-//         }
-//     });
-
-//     // 3. Onkruid wieden button
-//     onkruidButton.addEventListener("click", function () {
-//         console.log(linkedBloembed)
-//         if (!linkedBloembed) return;
-
-//         // 1. Maak de span met inhoud-bloembed leeg
-//         const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
-//         if (inhoudSpan) {
-//             inhoudSpan.textContent = "";
-//             inhoudSpan.classList.remove("onkruid"); // Verwijder ook de onkruid class
-//         }
-
-//         // Update uitleg paragraph
-//         uitlegP.textContent = "Onkruid gewied! Je kunt nu bloemen planten.";
+let linkedBloembed = null;
 
 
+// select bloembed and get the linked bloembed
+function checkBloembed() {
+    const selectedValue = bloembedSelect.value;
+    linkedBloembed = document.getElementById(selectedValue);
+    if (!linkedBloembed) return;
 
-//         // 2. Disable "onkruid-wieden" en enable "bloemen-planten"
-//         Array.from(actiesSelect.options).forEach(option => {
-//             if (option.value === "onkruid-wieden") {
-//                 option.disabled = true;
-//                 option.setAttribute("aria-disabled", "true");
-//             } else if (option.value === "bloemen-planten") {
-//                 option.disabled = false;
-//                 option.removeAttribute("aria-disabled");
-//             }
-//         });
+    const hasOnkruid = !!linkedBloembed.querySelector("span.onkruid");
+    const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
+    const isEmpty = inhoudSpan && inhoudSpan.classList.contains("is-empty");
+    const hasActie = inhoudSpan && inhoudSpan.classList.contains("actie-uitgevoerd");
 
-//         // Selecteer automatisch "bloemen-planten"
-//         actiesSelect.value = "bloemen-planten";
-        
-//         // Trigger change event om de juiste section te tonen
-//         actiesSelect.dispatchEvent(new Event("change"));
-
-//     });
-
-//     // // Optioneel: feedback aan gebruiker
-//     // alert("Onkruid gewied! Je kunt nu bloemen planten.");
-
-//     // 4. Plant bloemen button
-//     plantButton.addEventListener("click", function () {
-//         if (!linkedBloembed) return;
-
-//         // Haal de geselecteerde bloem op
-//         const selectedOption = bloemzaadjesSelect.options[bloemzaadjesSelect.selectedIndex];
-//         const bloemnaam = selectedOption.getAttribute("data-bloem");
-//         const bloembedNaam = bloembedSelect.options[bloembedSelect.selectedIndex].text;
-
-    
-
-//         // Vul de inhoudSpan met de bloemnaam
-//         const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
-//         if (inhoudSpan && bloemnaam) {
-//             inhoudSpan.textContent = `met ${bloemnaam}.`;
-//         }
-
-//         // Optioneel: feedback aan gebruiker
-//         // alert(`${bloemnaam} geplant in ${bloembedSelect.options[bloembedSelect.selectedIndex].text}!`);
-
-        
-
-//         // Update uitleg paragraph
-//         uitlegP.textContent = `${bloemnaam} geplant in ${bloembedNaam}!`;
-//     });
-
-
-
-
-
-    const bloembedSelect = document.getElementById("bloembed-select");
-    const actiesSelect = document.getElementById("tuinier-acties");
-    const onkruidSection = document.querySelector(".onkruid-wieden-section");
-    const bloemenSection = document.querySelector(".bloemen-planten-section");
-    const onkruidButton = document.querySelector(".onkruid-wieden-section button");
-    const plantButton = document.querySelector(".bloemen-planten-section button");
-    const bloemzaadjesSelect = document.getElementById("bloemzaadjes2");
-    const uitlegP = document.querySelector(".uitleg");
-
-    let linkedBloembed = null;
-
-    // Functie om bloembed te updaten
-    function updateLinkedBloembed() {
-        const selectedValue = bloembedSelect.value;
-        linkedBloembed = document.getElementById(selectedValue);
-
-        if (!linkedBloembed) {
-            Array.from(actiesSelect.options).forEach(opt => {
-                opt.disabled = false;
-                opt.removeAttribute("aria-disabled");
-            });
-            return;
-        }
-
-        // Check of er onkruid in zit
-        const hasOnkruid = linkedBloembed.querySelector(".onkruid") !== null;
-
-        if (hasOnkruid) {
-            // Alleen "onkruid-wieden" beschikbaar
-            Array.from(actiesSelect.options).forEach(option => {
-                if (option.value !== "onkruid-wieden") {
-                    option.disabled = true;
-                    option.setAttribute("aria-disabled", "true");
-                } else {
-                    option.disabled = false;
-                    option.removeAttribute("aria-disabled");
-                }
-            });
-            actiesSelect.value = "onkruid-wieden";
-            
-            // Trigger change event om section te tonen
-            actiesSelect.dispatchEvent(new Event("change"));
-        } else {
-            // Alle opties beschikbaar behalve onkruid-wieden
-            Array.from(actiesSelect.options).forEach(option => {
-                if (option.value === "onkruid-wieden") {
-                    option.disabled = true;
-                    option.setAttribute("aria-disabled", "true");
-                } else {
-                    option.disabled = false;
-                    option.removeAttribute("aria-disabled");
-                }
-            });
-        }
-    }
-
-    // Initialiseer bij page load met de eerste geselecteerde waarde
-    updateLinkedBloembed();
-
-    // 1. Bloembed selectie
-    bloembedSelect.addEventListener("change", updateLinkedBloembed);
-
-    // 2. Actie selectie - toon juiste section
-    actiesSelect.addEventListener("change", function () {
-        // Verberg alle sections (voeg hidden class toe)
-        onkruidSection.classList.add("hidden");
-        bloemenSection.classList.add("hidden");
-
-        // Toon de juiste section (verwijder hidden class)
-        if (this.value === "onkruid-wieden") {
-            onkruidSection.classList.remove("hidden");
-        } else if (this.value === "bloemen-planten") {
-            bloemenSection.classList.remove("hidden");
-        }
-    });
-
-    // 3. Onkruid wieden button
-    onkruidButton.addEventListener("click", function () {
-        if (!linkedBloembed) return;
-
-        // 1. Maak de span met inhoud-bloembed leeg
-        const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
-        if (inhoudSpan) {
-            inhoudSpan.textContent = "";
-            inhoudSpan.classList.remove("onkruid"); // Verwijder ook de onkruid class
-        }
-
-        // 2. Disable "onkruid-wieden" en enable "bloemen-planten"
+    // als er onkruid is enable onkruid option en disable andere options
+    if (hasOnkruid) {
         Array.from(actiesSelect.options).forEach(option => {
-            if (option.value === "onkruid-wieden") {
-                option.disabled = true;
-                option.setAttribute("aria-disabled", "true");
-            } else if (option.value === "bloemen-planten") {
-                option.disabled = false;
-                option.removeAttribute("aria-disabled");
+            if (option.value === "onkruid-wieden" || option.value === "onkruid-water-geven") {
+            option.disabled = false;
+            option.removeAttribute("aria-disabled");
+            } else {
+            option.disabled = true;
+            option.setAttribute("aria-disabled", "true");
             }
         });
 
-        // Selecteer automatisch "bloemen-planten"
-        actiesSelect.value = "bloemen-planten";
-        
-        // Trigger change event om de juiste section te tonen
-        actiesSelect.dispatchEvent(new Event("change"));
+        actiesSelect.value = "onkruid-wieden";
 
-        // Update uitleg paragraph
-        uitlegP.textContent = "Onkruid gewied! Je kunt nu bloemen planten.";
-    });
+        // als er nog geen bloem geplant is
+        if (!hasActie) {
+        uitlegP.textContent = "In dit bloembed zit onkruid.";
+        } else {
+            // als er wel al een bloem geplant is
+            const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
+            if (!inhoudSpan) return;
 
-    // 4. Plant bloemen button
-    plantButton.addEventListener("click", function () {
-        if (!linkedBloembed) return;
+            const onkruidNaam = inhoudSpan.textContent
+                .replace("met ", "")
+                .replace(".", "")
+                .trim();
 
-        // Haal de geselecteerde bloem op
-        const selectedOption = bloemzaadjesSelect.options[bloemzaadjesSelect.selectedIndex];
-        const bloemnaam = selectedOption.getAttribute("data-bloem");
-        const bloembedNaam = bloembedSelect.options[bloembedSelect.selectedIndex].text;
-
-        // Vul de inhoudSpan met de bloemnaam
-        const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
-        if (inhoudSpan && bloemnaam) {
-            inhoudSpan.textContent = `met ${bloemnaam}.`;
+            uitlegP.textContent = `Je ${onkruidNaam} spreid uit!`;
         }
 
-        // Update uitleg paragraph
-        uitlegP.textContent = `${bloemnaam} geplant in ${bloembedNaam}!`;
+    } else if (isEmpty) {
+
+        
+        // als er onkruid gewied is
+        Array.from(actiesSelect.options).forEach(option => {
+        option.disabled = false;
+        option.removeAttribute("aria-disabled");
+        });
+
+        actiesSelect.value = "bloemen-planten";
+        
+        const bloemnaam = inhoudSpan.textContent.replace("met ", "").replace(".", "");
+        const bloembedNaam = bloembedSelect.options[bloembedSelect.selectedIndex].text;
+
+        if (inhoudSpan.textContent === "") {
+            uitlegP.textContent = "In dit bloembed zit geen onkruid. Je kunt bloemen planten!";
+        } else {
+            uitlegP.textContent = `${bloemnaam} geplant in ${bloembedNaam}!`;
+        }
+
+    } else {
+        // geen onkruid
+        Array.from(actiesSelect.options).forEach(option => {
+        if (option.value === "onkruid-wieden") {
+            option.disabled = true;
+            option.setAttribute("aria-disabled", "true");
+        } else {
+            option.disabled = false;
+            option.removeAttribute("aria-disabled");
+        }
+        });
+
+        actiesSelect.value = "bloemen-planten";
+        uitlegP.textContent = "In dit bloembed zit geen onkruid. Je kunt bloemen planten!";
+    } 
+
+    // laat section zien voor de geselecteerde option
+    updateSectionsVisibility();
+}
+
+// laat section zien voor de geselecteerde option
+function updateSectionsVisibility() {
+    document.querySelectorAll(".actie-section").forEach(section => {
+        section.classList.add("hidden");
     });
+
+    const sectionClass = `${actiesSelect.value}-section`;
+    const linkedSection = document.querySelector(`.${sectionClass}`);
+    if (linkedSection) {
+        linkedSection.classList.remove("hidden");
+    }
+}
+
+
+
+checkBloembed();
+bloembedSelect.addEventListener("change", checkBloembed);
+actiesSelect.addEventListener("change", updateSectionsVisibility);
+
+
+// Onkruid wieden button
+onkruidButton.addEventListener("click", function () {
+    if (!linkedBloembed) return;
+
+    // onkruid weghalen
+    const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
+    if (inhoudSpan) {
+        inhoudSpan.textContent = "";
+        inhoudSpan.classList.remove("onkruid");
+    }
+
+    // options disabelen
+    Array.from(actiesSelect.options).forEach(option => {
+        if (option.value === "onkruid-wieden") {
+            option.disabled = true;
+            option.setAttribute("aria-disabled", "true");
+        } else if (option.value === "onkruid-water-geven") {
+            option.disabled = true;
+            option.setAttribute("aria-disabled", "true");
+        } else {
+            option.disabled = false;
+            option.removeAttribute("aria-disabled");
+        }
+    });
+
+    // laat bloemen planten option zien
+    actiesSelect.value = "bloemen-planten";
+    actiesSelect.dispatchEvent(new Event("change")); 
+    
+
+    let isEmpty = inhoudSpan.classList.add("is-empty")
+
+    if (!isEmpty) {
+        uitlegP.textContent = "Onkruid gewied! Je kunt nu bloemen planten.";
+    }
+
+    if (geluidCheckbox.checked) {
+        shovelGeluid.play();
+    }
+});
+
+
+
+
+// Plant bloemen button
+plantButton.addEventListener("click", function () {
+    if (!linkedBloembed) return;
+
+    // Haal de geselecteerde bloem op
+    const selectedOption = bloemzaadjesSelect.options[bloemzaadjesSelect.selectedIndex];
+    const bloemnaam = selectedOption.getAttribute("data-bloem");
+    const bloembedNaam = bloembedSelect.options[bloembedSelect.selectedIndex].text;
+
+    // Vul de inhoudSpan met bloemnaam
+    const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
+    if (inhoudSpan && bloemnaam) {
+        inhoudSpan.textContent = `met ${bloemnaam}.`;
+    }
+
+    uitlegP.textContent = `${bloemnaam} geplant in ${bloembedNaam}!`;
+
+    inhoudSpan.classList.add("bloem-geplant")
+    inhoudSpan.classList.remove("is-empty")
+
+    tuinbeschrijvingAanpassen();
+
+    if (geluidCheckbox.checked) {
+        bloemGeplantAudio.play();
+    }
+});
+
+
+// onkruid water geven button
+const onkruidWaterGevenButton = document.querySelector(".onkruid-water-geven-section button");
+
+onkruidWaterGevenButton.addEventListener("click", function () {
+    if (!linkedBloembed) return;
+
+    const inhoudSpan = linkedBloembed.querySelector(".inhoud-bloembed");
+    if (!inhoudSpan) return;
+
+    // onkruid naam uit span
+    const onkruidNaam = inhoudSpan.textContent
+        .replace("met ", "")
+        .replace(".", "")
+        .trim();
+
+    uitlegP.textContent = `Je ${onkruidNaam} spreid uit!`;
+    
+    // class om te laten weten dat er een actie is uitgevoerd
+    inhoudSpan.classList.add("actie-uitgevoerd");
+});
+
+
+const tuinBeschrijving = document.getElementById("tuinDescription")
+
+// tuinbeschrijving aanpassen als er een bloem geplant is
+
+function tuinbeschrijvingAanpassen() {
+    let bloemGeplant = document.querySelector(".bloem-geplant")
+
+    if(bloemGeplant) {
+        tuinBeschrijving.textContent = "Je tuin zit vol met bloemen. Het ruikt heerlijk!"
+    }
+}

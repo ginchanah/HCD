@@ -243,60 +243,54 @@ Wat heb ik vandaag gedaan?
 ## Dag 6 
 ### Test met Ihab
 
+- Interactie met de bloempot werkt helemaal goed!!
+
+- De disabled knoppen worden niet voorgelezen, dus er is een select met maar 1 option en dat vind hij raar
+    - ik moet altijd meer dan 1 optie laten zien
+
+- Hij wil graag dat er bij onkruid ook de optie is om het te laten groeien
+    - Ik ga onkruid water geven toevoegen als interactie!
+
+- Hij vind het fijn hoe de focus verspringt
+
+- De geluidseffecten zijn nu niet op heel veel plekken, hij wil graag meer
+    - Ik ga meer geluidseffecten toevoegen
+
+- Hij wil ook met het tabel kunnen interageren, anders is er nu een overzicht zonder interactie
+    - Ik ga links toevoegen in de tabel, waarmee je terug kunt gaan naar bloembed bewerken
+
+- Er is nog een bug, dat als je de select bewerkt en gaat van een bloembed met onkruid naar en bloembed waarin het onkruid al gewied is kan je nog steeds alleen het onkruid verwijderen
+    - Ik moet de bug fixen
+
+- Tuinbeschrijving aanpassen, er staat nu altijd dat de tuin nog leeg is
+    - als er bloemen geplant zijn moet ik de tuinbeschrijving aanpassen
 
 
-- hij leest alle zaadjes
-- onkruid is verwijdert
-maar hij snapt niet waar hij dan terug moet
-lavendel zaad
-water geven aan je bloemen werkt
+## Dag 7
+- Wat heb ik vandaag gedaan?
+    - Vandaag heb ik gewerkt aan de bugfix, dat het onkruid wieden de enige optie blijft als je tussen verschillende bloembedden wisselt die al gewied zijn. Dit duurde veel langer dan ik had verwacht, want eigenlijk moest ik mijn hele code opnieuw schrijven zodat de logica nog steeds werkte ook met nog meer verschillende states, zoals "bloem geplant" en "onkruid water gegeven". Ik moest er dus voor zorgen dat dit altijd goed wordt getoond ook al ga je van select option veranderen.
+
+## Dag 8
+- Wat heb ik vandaag gedaan?
+    - Ik heb vandaag de rest van mijn bevindingen van Ihabs test verwerkt
+    - Ik heb meer geluidseffecteb toegevoegd
+    - Ik heb ervoor gezorgd dat de tuinbeschrijving aanpast als er bloemen geplant worden
+    - Ik heb links toegevoegd in de overzichtstabel zodat je vanuit daar terug kunt springen naar "bewerken"
 
 
 
-bloembedden
-kruiden
-onkruid wieden
-kies een actie maar je kan alleen onkruid wieden, de disabled knoppen worden niet voorgelezen
 
-overzicht tekst
+# Eindreflectie
+## Add Nonsense
+Ik ben tijdens dit project eigenlijk voornamelijk bezig geweest met "Add Nonsense". Ik vond het erg lasting om te bedenken wat ik voor Ihab moest maken, omdat hij alle dingen die "nuttig" waren afkeurde. Een extentie? Zou hij niet gebruiken. Een overzicht van shortcuts? Die kun je gewoon googelen. Dus het voelde niet echt nodig om iets te maken wat "nuttig" is. 
+Daarom besloot ik om iets te maken wat sowieso niet nuttig hoeft te zijn: een spelletje! En ik ben daarin nog verder gegaan. Ook mijn vormgeving is "nonsense". Ik heb een helemaal zwart scherm gemaakt, want voor Ihab kan toch niet zien, en de website is alleen voor hem bedoelt. 
 
-redelijk duidelijk
-- als je in alle bloembedden een andere bloem zet
-- overzicht wordt geupdated maar dat wordt dan automatisch voorgelezen
-- dynamischer 
-- onkruid laten groeien, en dat ook water geven
-- waarom zou je onkruid verwijderen
-- verwijder onkruid verspringen goed
-- onduidelijk 
-- geluidseffecten meer, alleen als je het plant tot nu toe verwijderen knop 
-- oohh als je een tweede bloem plant gaat ie meteen dood, dat aanpassen
-- ook meer opties voor onkruid
-- verspringen naar interactie met button is fijn
-- water geven kan hij selecteren?
+## Study Situation
+Ik heb onderzoek gedaan naar spellen voor blinde mensen, door zelf het spel "Stardew Valley" met een mod voor blinde mensen te spelen. En eigenlijk vond ik helemaal niet zo fijn hoe dat werkte, omdat er bij heel veel bewegingen gewoon niks werd gezegd. Dus ik wilde een spel maken waar je elke stap uitgelegd krijgt. En dit heb ik getest met Ihab: het moest voor hem werken en niet voor mij. Hij gaf aan dat hij meer interactie wilde met het onkruid, dus dat heb ik toegevoegd. Hij gaf aan dat hij een overzicht van de hele tuin wilde dus dat heb ik toegevoegd. Eigenlijk is alles in mijn spel op Ihab afgestemd. En ik denk dat het ook vooral werkt, omdat hij heel goed kan omgaan met screenreaders. Het lijkt mij dat dit spel ook heel verwarrend zou kunnen zijn voor iemand die minder goed met screen-readers kan omgaan. Maar daarvoor moest ik niet ontwerpen. Ik moest voor Ihab, een screenreader-pro ontwerpen, dus ik heb het ingewikkeld gemaakt maar het werkt ook gewoon! Hij vind het leuk, hij snapte alle interacties en hij moest zelfs een beetje om mijn spel lachen. Ik vind dat mijn spel heel goed bij mijn situation past: Screenreader-pro Ihab!
 
-- overzicht is lastig
-- tabel is lastig want hij kan er niet mee interageren
-- overzicht van acties bij elke bloem
+## Ignore Conventions
+Er zijn niet echt convention voor spellen voor blinde mensen, dus eigenlijk kon ik alles wat ik wist gewoon negeren. Hoe laat je zien dat je in een tuin bent? Hoe omschrijf je verschillende bloemen? Hoe zorg je ervoor dat je bloemen kunt planten, verwijderen en water geven? Hier bestaan geen conventies voor, dus ik heb maar gewoon mijn best gedaan om iets te bedenken met behulp van selects en checkboxes. En het blijkt te werken! Ihab snapte meteen wat hij moest doen. Jules Ernst zei tijdens mijn test met hem, dat hij zich meteen zorgen maakte, omdat ik zoveel dingen liet verschijnen en verdwijnen, en dat er meteen alarm-belletjes bij hem afgingen kwa toegankelijkheid. Maar ja, met een spel moet dat wel gebeuren. Dus ik heb het toch maar gedaan, en het blijkt allemaal goed te werken.
 
-- waar is links boven waar is rechts onder, hoe kan ik ervoor zorgen dat hij het kan bewerken
+## Prioritize Identity
+Prioritize Identity gaat voor mij met heel veel dingen samen die ik hierboven al heb genoemd. Ihab is een screen-reader pro, dus ik kon de interactie wel redelijk ingewikkeld maken en het toch laten werken. Zijn identiteit maakt mijn spel ingewikkelder dan ik het zou maken voor een persoon die minder goed kan omgaan met screenreaders. Hij kan heel goed navigeren tussen verschillende sections en omgaan met selects en checkboxes, en hij snapt wat er gebeurd als de focus verspringt, dus dit waren allemaal dingen waarmee ik kon werken. En de functionaliteiten zijn dus ook op zijn identiteit afgestemd. Hij wilde het onkruid graag water geven en niet meteen verwijderen, dus dat kan hij nu doen. Hij heeft geen vormgeving nodig, dus er is nu geen vormgeving. De website werkt goed voor Ihab, en ook alleen voor Ihab!
 
-- rechts boven -> bij selectie vakje zeggen wat er 
-
-- je kan nog steeds alleen onkruid wieden ook al zitten er al tulpen in 
-
-- misschien opties niet disables maar gewoon helemaal weghalen en andere dingen toevoegen
-
-- geplante zevenblad is verwarrend, hij denkt dat die leeg is 
-
-- button naast het bloembed in overzicht waar je terug gaat naar bewerken
-- ik moet de tuinbeschrijving aanpassen want nu staat er altijd dat de tuin leeg is hihi
-
-- bevindingen: zowel mijn idee als ook die van jules werken! yippie. 
-
-- elke keer dat je de select wissel moet je het gelinkte veld aanpassen. als je een veld bewerkt en dan het veld wisselt blijven er dezelfde opties bestaan
-- vgm iets van als er GEEN class onkruid op staat moet je class bloem erop zetten en op basis daarvan weer de opties voor de select aanpassen
-- dus als je meer dan een select optie kiest blijven de mogelijkheden hetzelfde
-- hij veranderd wel als er onkruid inzit maar blijft op onkruid wieden als er al bloemen inzitten, dat moet anders
-- maar bloemen planten is dan ook nog zichtbaar? oh no. bug fixes!!
-- tabel aria-labelledby h2
-- focus verspringen goeddddd zorg ervoor dat dat bij elke button gebeurt
